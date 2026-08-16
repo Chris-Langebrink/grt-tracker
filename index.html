@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B1620">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Garden Route Ultra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1620;--panel:#122230;--up:#172C3C;--line:#1E3644;
+  --text:#E9EFF3;--mute:#7E97A6;--faint:#4E6878;
+  --swim:#35C4D9;--bike:#F0A337;--run:#FF6B57;--rest:#425C6C;--race:#FFD166;--done:#4ADE80;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;
+     padding-bottom:calc(48px + env(safe-area-inset-bottom));min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+.cond{font-family:'Barlow Condensed',ui-sans-serif,system-ui;letter-spacing:.02em}
+.mono{font-variant-numeric:tabular-nums;font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--faint);font-weight:600;text-transform:uppercase}
+header{background:linear-gradient(var(--panel),var(--bg));border-bottom:1px solid var(--line);
+       padding-top:calc(20px + env(safe-area-inset-top))}
+.count{display:flex;align-items:baseline;gap:10px;margin-top:4px}
+.count .n{font-size:60px;font-weight:700;line-height:.9;color:var(--race)}
+.bars{display:flex;gap:5px;align-items:flex-end;height:62px;margin-top:18px}
+.bar{flex:1;border:0;padding:0;background:none;cursor:pointer;display:flex;flex-direction:column;
+     justify-content:flex-end;height:100%;border-radius:4px}
+.bar:focus-visible{outline:2px solid var(--race);outline-offset:2px}
+.barfill{border-radius:3px 3px 0 0;transition:background .18s,transform .18s;transform-origin:bottom}
+.bar:hover .barfill{transform:scaleY(1.05)}
+.blabels{display:flex;gap:5px;margin-top:6px}
+.blabels div{flex:1;text-align:center;font-size:11px;font-weight:600;color:var(--faint)}
+.blabels div.on{color:var(--text)}
+.prog{display:flex;align-items:center;gap:10px;margin:16px 0 14px}
+.track{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.track>i{display:block;height:100%;background:var(--done);transition:width .3s}
+.whead{display:flex;align-items:baseline;justify-content:space-between;margin:18px 0 10px}
+.row{display:flex;width:100%;border:0;background:var(--panel);color:inherit;text-align:left;cursor:pointer;
+     border-radius:9px;overflow:hidden;margin-bottom:6px;transition:background .15s,opacity .2s;font:inherit;align-items:stretch}
+.row:hover{background:var(--up)}
+.row:focus-visible{outline:2px solid var(--race);outline-offset:2px}
+.row.done{opacity:.5}
+.row.done .ttl{text-decoration:line-through}
+.row.today{box-shadow:inset 0 0 0 1.5px var(--race)}
+.spine{width:4px;flex:none}
+.date{width:46px;flex:none;padding:11px 0;text-align:center;border-right:1px solid var(--line)}
+.date .dow{font-size:10px;color:var(--faint);font-weight:600}
+.row.today .date .dow{color:var(--race)}
+.date .num{font-size:20px;font-weight:700;line-height:1.1}
+.body{flex:1;min-width:0;padding:11px 12px}
+.ttl{font-size:17px;font-weight:600}
+.ttl.rest{color:var(--mute)}
+.key{font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 5px;border-radius:3px;color:var(--bg)}
+.note{font-size:12px;color:var(--mute);margin-top:3px;line-height:1.45;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.note.open{-webkit-line-clamp:99}
+.meta{display:flex;gap:10px;margin-top:6px;align-items:center}
+.meta .dur{font-size:11px;color:var(--faint)}
+.more{font-size:11px;color:var(--mute);text-decoration:underline;cursor:pointer}
+.missed{font-size:10px;color:var(--run);letter-spacing:.08em}
+.tickwrap{display:grid;place-items:center;padding:0 13px 0 4px;flex:none}
+.tick{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+      border:1.5px solid var(--line);transition:all .18s}
+.row.done .tick{background:var(--done);border-color:transparent}
+.tick svg{display:none}.row.done .tick svg{display:block}
+.callout{background:var(--panel);border-radius:0 8px 8px 0;padding:11px 13px;margin-top:10px}
+.callout h4{font-size:14px;font-weight:600;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif}
+.callout p{font-size:12px;color:var(--mute);line-height:1.5}
+.tabs{display:flex;gap:5px;background:var(--panel);padding:4px;border-radius:9px}
+.seg{border:0;background:none;color:var(--mute);font:inherit;font-size:12px;font-weight:600;padding:7px 0;
+     cursor:pointer;flex:1;border-radius:7px;transition:all .15s;letter-spacing:.04em;font-family:Inter,sans-serif}
+.seg.on{background:var(--up);color:var(--text)}
+.ref div.r{padding:9px 2px;border-bottom:1px solid var(--line)}
+.ref div.r:last-child{border-bottom:0}
+.ref .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.ref .a{font-size:15px;font-weight:600}
+.ref .b{font-size:12px;color:var(--race);text-align:right;flex:none}
+.ref .c{font-size:12px;color:var(--mute);margin-top:2px;line-height:1.45}
+footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);
+       display:flex;justify-content:space-between;align-items:center;gap:12px}
+footer p{font-size:11px;color:var(--faint);line-height:1.5}
+.btn{border:0;background:none;color:var(--mute);font:inherit;font-size:12px;font-weight:600;
+     padding:5px 10px;border-radius:7px;cursor:pointer;flex:none;font-family:Inter,sans-serif}
+.btn:hover{background:var(--panel)}
+.fade{animation:f .3s ease}
+@keyframes f{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Garden Route Ultra · Mossel Bay</div>
+    <div class="count">
+      <span class="cond mono n" id="days">–</span>
+      <div>
+        <div class="cond" style="font-size:21px;font-weight:600;line-height:1">days to go</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:3px">Sun 20 Sep · 2 / 80 / 20 km</div>
+      </div>
+    </div>
+    <div class="bars" id="bars"></div>
+    <div class="blabels" id="blabels"></div>
+    <div class="prog">
+      <div class="track"><i id="fill"></i></div>
+      <span class="mono" style="font-size:11px;color:var(--mute)" id="frac"></span>
+      <span class="mono" id="saved" style="font-size:10px;color:transparent;transition:color .3s">saved</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="whead">
+    <div><span class="cond" id="wname" style="font-size:24px;font-weight:700"></span>
+      <span style="font-size:12px;color:var(--mute);margin-left:9px" id="wrange"></span></div>
+    <span class="mono" style="font-size:12px;color:var(--mute)" id="whrs"></span>
+  </div>
+  <div id="days-list"></div>
+  <div id="gate"></div>
+
+  <div style="margin-top:26px">
+    <div class="eyebrow" style="margin-bottom:8px">Reference</div>
+    <div class="tabs" id="tabs"></div>
+    <div class="ref fade" id="ref" style="margin-top:8px"></div>
+  </div>
+
+  <footer>
+    <p id="status"></p>
+    <div id="resetwrap"><button class="btn" id="reset">Reset</button></div>
+  </footer>
+</div>
+
+<script>
+const C={swim:"var(--swim)",bike:"var(--bike)",run:"var(--run)",rest:"var(--rest)",race:"var(--race)",other:"var(--mute)"};
+const spine=t=>t==="brick"
+ ?"linear-gradient(var(--bike) 0%,var(--bike) 45%,var(--run) 55%,var(--run) 100%)":(C[t]||"var(--mute)");
+
+const WEEKS=[
+{n:0,sub:"Now — sick",hrs:.5,range:"15–16 Aug",days:[
+{d:"2026-08-15",t:"rest",title:"Rest",note:"Nothing. Sleep, eat properly, stay warm.",dur:"—"},
+{d:"2026-08-16",t:"rest",title:"Rest",note:"Rest, or a 30 min walk if you feel like it. Get Seb's gift.",dur:"—"}]},
+{n:1,sub:"Clearance",hrs:4.5,range:"17–23 Aug",days:[
+{d:"2026-08-17",t:"rest",title:"Rest",note:"Full rest. Seb's birthday — sort the gift.",dur:"—"},
+{d:"2026-08-18",t:"bike",title:"Easy spin + Push",note:"40 min flat spin, HR under 135, no hills. PM: Push at 60% of normal sets, 3 reps short of failure.",dur:"40m"},
+{d:"2026-08-19",t:"swim",title:"Swim",note:"1,200 m easy. Technique only — drills, bilateral breathing, long strokes. No intervals.",dur:"35m"},
+{d:"2026-08-20",t:"run",title:"Easy run + Pull",note:"35 min at 6:45–7:00/km, HR under 145. Flat. PM: Pull, same reduced volume.",dur:"35m"},
+{d:"2026-08-21",t:"bike",title:"Easy spin",note:"60 min Z2, HR under 140. Keep it genuinely conversational.",dur:"60m"},
+{d:"2026-08-22",t:"bike",title:"Long ride",note:"55 km flat-ish, HR under 145 the whole way. If you can't hold a conversation, ease off.",dur:"2:15"},
+{d:"2026-08-23",t:"swim",title:"Swim + walk",note:"1,500 m steady, then a 30 min walk.",dur:"1:15"}]},
+{n:2,sub:"Build",hrs:8,range:"24–30 Aug",days:[
+{d:"2026-08-24",t:"rest",title:"Rest",note:"Full rest.",dur:"—"},
+{d:"2026-08-25",t:"run",title:"Run + Legs",note:"8 km easy at 6:30/km, HR under 150. PM: Legs — light, never to failure.",dur:"50m"},
+{d:"2026-08-26",t:"bike",title:"Bike + Push",note:"70 min — 20 min warm-up, then 3 × 10 min at race effort (140–150 bpm) with 5 min easy between. PM: Push.",dur:"70m"},
+{d:"2026-08-27",t:"swim",title:"Swim + Pull",note:"2,000 m — 400 warm-up, 4 × 300 steady off 30 s rest, 400 easy. PM: Pull.",dur:"50m"},
+{d:"2026-08-28",t:"bike",title:"Easy spin",note:"60 min Z2. Legs loose for tomorrow.",dur:"60m"},
+{d:"2026-08-29",t:"brick",title:"Brick",key:1,note:"70 km at Z2 (135–148 bpm), then straight into a 20 min run at 6:45–7:00/km. Practise 60 g carbs/hr on the bike.",dur:"3:20"},
+{d:"2026-08-30",t:"run",title:"Long run",note:"14 km easy, flat route, HR under 150. Don't chase pace.",dur:"1:30"}]},
+{n:3,sub:"Peak",hrs:9.5,range:"31 Aug – 6 Sep",days:[
+{d:"2026-08-31",t:"rest",title:"Rest",note:"Full rest.",dur:"—"},
+{d:"2026-09-01",t:"run",title:"Run + Legs",note:"10 km — 3 km easy, 5 km at race effort (6:15–6:25/km, 150–158 bpm), 2 km easy. PM: Legs, light.",dur:"65m"},
+{d:"2026-09-02",t:"bike",title:"Bike + Push",note:"75 min — 2 × 15 min at race effort with 8 min easy between. PM: Push.",dur:"75m"},
+{d:"2026-09-03",t:"swim",title:"Open water",key:1,note:"1,800 m in the sea, in your wetsuit. Sight every 6–8 strokes. False Bay is warmer than the Atlantic. PM: Pull.",dur:"60m"},
+{d:"2026-09-04",t:"rest",title:"Rest",note:"Full rest or a 30 min walk. Protect tomorrow.",dur:"—"},
+{d:"2026-09-05",t:"brick",title:"Big brick",key:1,note:"80 km at race effort, then a 30 min run. Full race kit, full nutrition at 80–90 g carbs/hr. Your dress rehearsal.",dur:"3:45"},
+{d:"2026-09-06",t:"run",title:"Long run",note:"16–17 km easy, HR under 152. Longest run of the block.",dur:"1:50"}]},
+{n:4,sub:"Sharpen",hrs:7,range:"7–13 Sep",days:[
+{d:"2026-09-07",t:"rest",title:"Rest",note:"Full rest.",dur:"—"},
+{d:"2026-09-08",t:"run",title:"Run + last Legs",note:"8 km with 4 × 3 min at race effort. PM: final legs session of the block — light, nothing heavy.",dur:"50m"},
+{d:"2026-09-09",t:"bike",title:"Bike + Push",note:"60 min — 3 × 8 min at race effort. PM: Push.",dur:"60m"},
+{d:"2026-09-10",t:"swim",title:"Open water",key:1,note:"2,000 m continuous in the wetsuit, no stopping. Race simulation. PM: Pull.",dur:"60m"},
+{d:"2026-09-11",t:"rest",title:"Rest",note:"Full rest.",dur:"—"},
+{d:"2026-09-12",t:"brick",title:"Race rehearsal",key:1,note:"Wake at race time. Eat the race breakfast. 50 km at race effort, then 8 km at race pace. Exact kit, exact nutrition, exact transition.",dur:"2:40"},
+{d:"2026-09-13",t:"swim",title:"Easy",note:"1,200 m swim, then a 30 min walk.",dur:"1:00"}]},
+{n:5,sub:"Taper",hrs:3.5,range:"14–20 Sep",days:[
+{d:"2026-09-14",t:"rest",title:"Rest",note:"Full rest.",dur:"—"},
+{d:"2026-09-15",t:"bike",title:"Bike + last gym",note:"45 min with 4 × 3 min at race effort. PM: one combined light full-body session. No legs. Last gym of the block.",dur:"45m"},
+{d:"2026-09-16",t:"run",title:"Run",note:"6 km easy with 4 × 1 min pickups at race pace. Nothing more.",dur:"40m"},
+{d:"2026-09-17",t:"swim",title:"Swim",note:"1,200 m including 4 × 100 at race pace. Sharp and short.",dur:"30m"},
+{d:"2026-09-18",t:"other",title:"Travel",note:"30 min easy spin. Pack. Drive to Mossel Bay — roughly four hours on the N2.",dur:"30m"},
+{d:"2026-09-19",t:"other",title:"Shake-out + registration",key:1,note:"15 min jog, 10 min swim at Santos Beach to see the swim exit. Registration 11h30–16h30 at Diaz Strand. Bike check. Off your feet by 16h00.",dur:"40m"},
+{d:"2026-09-20",t:"race",title:"RACE DAY",key:1,note:"Garden Route Triathlon Ultra — 2 km swim, 80 km bike, 20 km run.",dur:"~6:00"}]}];
+
+const REF={Effort:[
+["Swim, 2 km","Don't look at HR","Steady. Never sprint the first 200 m."],
+["Bike, 0–20 km","135–145 bpm","Full sentences. Deliberately too easy."],
+["Bike, 20–70 km","140–150 bpm","Short sentences, 5–8 words. 28–31 km/h."],
+["Bike, 70–80 km","138–148 bpm","Back off. Spin. Save it for the run."],
+["Run, 0–5 km","145–155 bpm","6:45–7:00/km. Three or four words at a time."],
+["Run, 5–15 km","150–160 bpm","6:30–6:50/km. Run 9 min, walk 1 min."],
+["Run, 15–20 km","158–168 bpm","The only place you empty the tank."]],
+Fuel:[
+["3 h before","165–200 g carbs","Oats, honey, banana, white bread, coffee. Nothing new."],
+["30 min before","~25 g","A gel, or a few mouthfuls of your mix."],
+["Bike, 2:45","80 g/hr · ~220 g","2 × 750 ml at 90 g each + 2 gels. Keep near 2:1 glucose:fructose."],
+["Run, 2:20","50–60 g/hr · ~130 g","Gel every 25–30 min. Water every aid station. Coke from 12 km."],
+["Sodium","500–700 mg/hr","Cool spring morning — stay at the low end."],
+["Daily, big days","6–8 g/kg · 500–660 g","Eat at maintenance. The cut is off until 20 September."]],
+Course:[
+["Swim","2 km · Santos Beach","Protected bay. ~16–17 °C. Wetsuit. Target 42–48 min."],
+["Bike","79.2 km · +474 m","Two laps, Santos ↔ Tergniet. 6 m/km — a third of your usual. Target 2:40–2:55."],
+["Out vs back","+141 m / +96 m","Outbound is net uphill every lap. Slow legs going out is the road, not you."],
+["Run","20 km · 3 loops","~180–280 m. You pass the finish twice. Target 2:10–2:30."],
+["Total","5:40 – 6:20","Target sub-6:00. Under 6:30 after two illnesses is a good day."]]};
+
+const ALL=WEEKS.flatMap(w=>w.days);
+const RACE=new Date("2026-09-20T07:00:00+02:00");
+const KEY="grt2026";
+const today=new Date().toLocaleDateString("en-CA");
+let done={},week=0,tab="Effort",openNote=null,confirming=false;
+
+try{done=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){done={}}
+week=Math.max(0,WEEKS.findIndex(w=>w.days.some(d=>d.d>=today)));
+if(week<0)week=WEEKS.length-1;
+
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(done));
+    const s=document.getElementById("saved");s.style.color="var(--done)";
+    setTimeout(()=>s.style.color="transparent",900);
+  }catch(e){}
+}
+const fmt=iso=>{const dt=new Date(iso+"T12:00:00");return{
+  dow:dt.toLocaleDateString("en-GB",{weekday:"short"}).toUpperCase(),num:dt.getDate()}};
+const el=(t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!==undefined)n.innerHTML=h;return n};
+
+function render(){
+  document.getElementById("days").textContent=Math.max(0,Math.ceil((RACE-new Date())/864e5));
+  const nDone=ALL.filter(d=>done[d.d]).length;
+  document.getElementById("fill").style.width=(nDone/ALL.length*100)+"%";
+  document.getElementById("frac").textContent=nDone+"/"+ALL.length;
+
+  const bars=document.getElementById("bars"),lab=document.getElementById("blabels");
+  bars.innerHTML="";lab.innerHTML="";
+  WEEKS.forEach((w,i)=>{
+    const pct=w.days.filter(d=>done[d.d]).length/w.days.length;
+    const b=el("button","bar");b.setAttribute("aria-label",w.sub);
+    const f=el("div","barfill");
+    f.style.height=Math.max(9,w.hrs/9.5*100)+"%";
+    f.style.background=i===week?"var(--race)":"rgba(126,151,166,"+(.25+pct*.5)+")";
+    b.appendChild(f);b.onclick=()=>{week=i;openNote=null;render()};bars.appendChild(b);
+    const l=el("div",i===week?"cond on":"cond",w.n===0?"NOW":"W"+w.n);lab.appendChild(l);
+  });
+
+  const W=WEEKS[week];
+  document.getElementById("wname").textContent=W.sub;
+  document.getElementById("wrange").textContent=W.range;
+  document.getElementById("whrs").textContent=W.hrs+" h";
+
+  const list=document.getElementById("days-list");list.innerHTML="";list.className="fade";
+  void list.offsetWidth;
+  W.days.forEach(d=>{
+    const isDone=!!done[d.d],isToday=d.d===today,past=d.d<today,f=fmt(d.d);
+    const tint=d.t==="brick"?"var(--bike)":(C[d.t]||"var(--mute)");
+    const r=el("button","row"+(isDone?" done":"")+(isToday?" today":""));
+    r.setAttribute("aria-pressed",isDone);
+    r.innerHTML=
+      '<div class="spine" style="background:'+spine(d.t)+'"></div>'+
+      '<div class="date"><div class="cond dow">'+f.dow+'</div><div class="cond mono num">'+f.num+'</div></div>'+
+      '<div class="body">'+
+        '<div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap">'+
+          '<span class="cond ttl'+(d.t==="rest"?" rest":"")+'">'+d.title+'</span>'+
+          (d.key?'<span class="cond key" style="background:'+tint+'">KEY</span>':'')+
+        '</div>'+
+        '<div class="note'+(openNote===d.d?" open":"")+'">'+d.note+'</div>'+
+        '<div class="meta"><span class="mono dur">'+d.dur+'</span>'+
+          (d.note.length>74?'<span class="more">'+(openNote===d.d?"less":"more")+'</span>':'')+
+          (past&&!isDone&&d.t!=="rest"?'<span class="cond missed">MISSED</span>':'')+
+        '</div>'+
+      '</div>'+
+      '<div class="tickwrap"><div class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" '+
+        'stroke="#0B1620" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">'+
+        '<polyline points="20 6 9 17 4 12"/></svg></div></div>';
+    r.onclick=e=>{
+      if(e.target.classList.contains("more")){openNote=openNote===d.d?null:d.d;render();return}
+      done[d.d]?delete done[d.d]:done[d.d]=1;save();render();
+    };
+    list.appendChild(r);
+  });
+
+  const g=document.getElementById("gate");g.innerHTML="";
+  if(week===1)g.innerHTML='<div class="callout" style="border-left:3px solid var(--done)">'+
+    '<h4>Gate before Week 2</h4><p>Symptoms gone 48 hours, HRV at baseline 2–3 days running, and Saturday\'s '+
+    '55 km left you tired rather than wrecked. If any of those fail, repeat this week and shift everything back.</p></div>';
+  if(week===4)g.innerHTML='<div class="callout" style="border-left:3px solid var(--race)">'+
+    '<p>After Saturday 12 September, nothing you do makes you fitter for this race. '+
+    'Everything after that is about arriving fresh.</p></div>';
+
+  const tabs=document.getElementById("tabs");tabs.innerHTML="";
+  Object.keys(REF).forEach(k=>{
+    const b=el("button","seg"+(tab===k?" on":""),k);b.onclick=()=>{tab=k;render()};tabs.appendChild(b);
+  });
+  const ref=document.getElementById("ref");ref.innerHTML="";ref.className="ref fade";void ref.offsetWidth;
+  REF[tab].forEach(x=>ref.appendChild(el("div","r",
+    '<div class="top"><span class="cond a">'+x[0]+'</span><span class="mono b">'+x[1]+'</span></div>'+
+    '<div class="c">'+x[2]+'</div>')));
+
+  const elapsed=ALL.filter(d=>d.d<today).length;
+  const missed=ALL.filter(d=>d.d<today&&!done[d.d]&&d.t!=="rest").length;
+  document.getElementById("status").textContent=
+    elapsed===0?"Nothing due yet. Rest up.":
+    missed===0?nDone+" done, nothing missed. Keep it there.":
+    missed+" session"+(missed>1?"s":"")+" missed so far. Don't try to make them up.";
+
+  const rw=document.getElementById("resetwrap");rw.innerHTML="";
+  if(confirming){
+    const a=el("button","btn","Clear all");a.style.color="var(--run)";
+    a.onclick=()=>{done={};confirming=false;save();render()};
+    const b=el("button","btn","Cancel");b.onclick=()=>{confirming=false;render()};
+    rw.style.display="flex";rw.style.gap="6px";rw.appendChild(a);rw.appendChild(b);
+  }else{
+    const b=el("button","btn","Reset");b.onclick=()=>{confirming=true;render()};rw.appendChild(b);
+  }
+}
+render();
+</script>
+</body>
+</html>
