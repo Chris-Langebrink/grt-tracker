@@ -1,0 +1,31 @@
+{
+  "updated": "2026-08-31",
+  "note": "Written by the 08:00 routine from Garmin. A session counts as done when the evidence supports it, including sessions found inside a Cardio log and sessions Chris confirmed the watch mis-recorded.",
+  "completed": {
+    "2026-08-17": true,
+    "2026-08-18": true,
+    "2026-08-19": true,
+    "2026-08-20": true,
+    "2026-08-21": true,
+    "2026-08-22": true,
+    "2026-08-23": true,
+    "2026-08-24": true,
+    "2026-08-25": true,
+    "2026-08-26": true,
+    "2026-08-27": true,
+    "2026-08-28": false,
+    "2026-08-29": true,
+    "2026-08-30": true
+  },
+  "evidence": {
+    "2026-08-18": "Wrapped in Cardio: 42 min steady at 125 bpm after the gym block.",
+    "2026-08-20": "Wrapped in Cardio: 36 min at 135-144 bpm after the gym block.",
+    "2026-08-21": "Wrapped in Cardio: the whole 72 min log was the Z2 spin, steady at 134 bpm.",
+    "2026-08-22": "Watch started ~2/5 in. Real ride approx 45-50 km, not the 28.5 recorded.",
+    "2026-08-23": "1,500 m end-to-end at Silvermine, approx 2:24/100 m. Watch under-read the distance.",
+    "2026-08-25": "Wrapped in Cardio: 54 min at 138-150 bpm - the 8 km.",
+    "2026-08-26": "Wrapped in Cardio: warm-up plus three intervals at 141-146 bpm.",
+    "2026-08-28": "No activity recorded and none reported.",
+    "2026-08-29": "Brick completed. Ride was continuous but auto-split into four files; battery died before the run."
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "race": {
+    "name": "Garden Route Triathlon Ultra",
+    "date": "2026-09-20",
+    "start": "07:00",
+    "venue": "Santos Beach, Mossel Bay",
+    "legs": {
+      "swim_m": 2000,
+      "bike_km": 80,
+      "run_km": 20
+    },
+    "target": "sub 6:00",
+    "splits": {
+      "Swim 2 km": "42-48 min",
+      "T1": "4-6 min",
+      "Bike 80 km": "2:40-2:55",
+      "T2": "2-3 min",
+      "Run 20 km": "2:10-2:30",
+      "Total": "5:40-6:20"
+    }
+  },
+  "athlete": {
+    "name": "Chris",
+    "max_hr": 188,
+    "weight_kg": 83,
+    "kcal_target": 3000,
+    "protein_g": [
+      160,
+      180
+    ],
+    "zones": {
+      "Z1": [
+        0,
+        131
+      ],
+      "Z2": [
+        131,
+        150
+      ],
+      "Z3": [
+        150,
+        160
+      ],
+      "Z4": [
+        160,
+        171
+      ],
+      "Z5": [
+        171,
+        200
+      ]
+    },
+    "gym_split": "Legs / Push / Pull",
+    "rules": [
+      "Back (Pull) never sits on a swim day - it wrecks the catch.",
+      "Open water happens on weekends only.",
+      "Six hours between endurance and lifting. If they must share a slot, lift first.",
+      "Recorded distance is a floor, not a total. The watch under-records."
+    ]
+  },
+  "weeks": [
+    {
+      "n": 1,
+      "sub": "Clearance",
+      "range": "17-23 Aug",
+      "target_h": 4.5,
+      "status": "complete"
+    },
+    {
+      "n": 2,
+      "sub": "Build",
+      "range": "24-30 Aug",
+      "target_h": 8.0,
+      "status": "complete"
+    },
+    {
+      "n": 3,
+      "sub": "Peak",
+      "range": "31 Aug - 6 Sep",
+      "target_h": 10.0,
+      "status": "current"
+    },
+    {
+      "n": 4,
+      "sub": "Sharpen",
+      "range": "7-13 Sep",
+      "target_h": 7.0,
+      "status": "future"
+    },
+    {
+      "n": 5,
+      "sub": "Taper",
+      "range": "14-20 Sep",
+      "target_h": 3.5,
+      "status": "future"
+    }
+  ],
+  "sessions": [
+    {
+      "d": "2026-08-17",
+      "w": 1,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest."
+    },
+    {
+      "d": "2026-08-18",
+      "w": 1,
+      "t": "bike",
+      "title": "Easy spin + Push",
+      "gym": "Push",
+      "min": 40,
+      "detail": "40 min flat spin, HR under 135. PM: Push at 60% of normal set count."
+    },
+    {
+      "d": "2026-08-19",
+      "w": 1,
+      "t": "swim",
+      "title": "Swim 1,200 m",
+      "gym": null,
+      "min": 35,
+      "detail": "1,200 m easy. Technique only - drills, bilateral breathing, long strokes."
+    },
+    {
+      "d": "2026-08-20",
+      "w": 1,
+      "t": "run",
+      "title": "Easy run + Pull",
+      "gym": "Pull",
+      "min": 35,
+      "detail": "35 min at 6:45-7:00/km, HR under 145. Flat. PM: Pull."
+    },
+    {
+      "d": "2026-08-21",
+      "w": 1,
+      "t": "bike",
+      "title": "Easy spin",
+      "gym": null,
+      "min": 60,
+      "detail": "60 min Z2, HR under 140."
+    },
+    {
+      "d": "2026-08-22",
+      "w": 1,
+      "t": "bike",
+      "title": "Long ride",
+      "gym": null,
+      "min": 135,
+      "detail": "55 km flat-ish, HR under 145 the whole way."
+    },
+    {
+      "d": "2026-08-23",
+      "w": 1,
+      "t": "swim",
+      "title": "Swim + walk",
+      "gym": null,
+      "min": 75,
+      "detail": "1,500 m steady, then a 30 min walk."
+    },
+    {
+      "d": "2026-08-24",
+      "w": 2,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest."
+    },
+    {
+      "d": "2026-08-25",
+      "w": 2,
+      "t": "run",
+      "title": "Run 8 km + Legs",
+      "gym": "Legs",
+      "min": 50,
+      "detail": "8 km easy at 6:30/km, HR under 150. PM: Legs, light."
+    },
+    {
+      "d": "2026-08-26",
+      "w": 2,
+      "t": "bike",
+      "title": "Bike 3 x 10 min + Push",
+      "gym": "Push",
+      "min": 70,
+      "detail": "20 min warm-up, then 3 x 10 min at race effort (140-150 bpm) with 5 min easy between. PM: Push."
+    },
+    {
+      "d": "2026-08-27",
+      "w": 2,
+      "t": "swim",
+      "title": "Swim 2,000 m + Pull",
+      "gym": "Pull",
+      "min": 50,
+      "detail": "400 warm-up, 4 x 300 steady off 30 s rest, 400 easy. PM: Pull."
+    },
+    {
+      "d": "2026-08-28",
+      "w": 2,
+      "t": "bike",
+      "title": "Easy spin",
+      "gym": null,
+      "min": 60,
+      "detail": "60 min Z2. Legs loose for tomorrow."
+    },
+    {
+      "d": "2026-08-29",
+      "w": 2,
+      "t": "brick",
+      "title": "Brick - 70 km + 20 min run",
+      "gym": null,
+      "min": 200,
+      "key": true,
+      "detail": "70 km at Z2 (135-148 bpm), then straight into a 20 min run."
+    },
+    {
+      "d": "2026-08-30",
+      "w": 2,
+      "t": "run",
+      "title": "Long run 14 km",
+      "gym": null,
+      "min": 90,
+      "detail": "14 km easy, flat route, HR under 150."
+    },
+    {
+      "d": "2026-08-31",
+      "w": 3,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest. Two Unbalanced mornings make this one non-negotiable."
+    },
+    {
+      "d": "2026-09-01",
+      "w": 3,
+      "t": "swim",
+      "title": "Pool 2,000 m",
+      "gym": "Legs",
+      "min": 50,
+      "detail": "400 warm-up, 5 x 200 steady off 30 s rest, 400 easy. PM: Legs, light - 2-3 sets of 8-12, never to failure.",
+      "why": "Swim pairs with Legs so your lats arrive fresh. Legs sits furthest from Saturday."
+    },
+    {
+      "d": "2026-09-02",
+      "w": 3,
+      "t": "bike",
+      "title": "Bike 80 min - 2 x 18 min",
+      "gym": "Push",
+      "min": 80,
+      "detail": "20 min warm-up, then 2 x 18 min at race effort (140-150 bpm) with 8 min easy between. PM: Push.",
+      "why": "A step up from last week. You held 3 x 10 min almost perfectly on 26 August - this extends the block."
+    },
+    {
+      "d": "2026-09-03",
+      "w": 3,
+      "t": "run",
+      "title": "Run 10 km with race-effort block",
+      "gym": "Pull (back)",
+      "min": 65,
+      "detail": "3 km easy, 5 km at race effort (6:15-6:25/km, 150-158 bpm), 2 km easy. PM: Pull - back day.",
+      "why": "Back day moved here, off the swim day, as you asked."
+    },
+    {
+      "d": "2026-09-04",
+      "w": 3,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest or a 30 min walk.",
+      "why": "This is the one you skipped last week, and Saturday paid for it."
+    },
+    {
+      "d": "2026-09-05",
+      "w": 3,
+      "t": "brick",
+      "title": "BIG BRICK - 85 km + 35 min run",
+      "gym": null,
+      "min": 250,
+      "key": true,
+      "detail": "85 km at race effort, then straight into 35 min at 6:45-7:00/km. Full race kit, full nutrition at 80-90 g carbs/hr. Charge the watch the night before.",
+      "why": "Your dress rehearsal, bumped from 80 km because recovery is good. The RUN is the point - you have never run off the bike with data."
+    },
+    {
+      "d": "2026-09-06",
+      "w": 3,
+      "t": "swim",
+      "title": "SEA SWIM 1,800 m + 45 min easy run",
+      "gym": null,
+      "min": 105,
+      "key": true,
+      "detail": "False Bay in the wetsuit - Fish Hoek or Simon's Town, never alone. Sight every 6-8 strokes. Then 45 min easy jog, HR under 145.",
+      "why": "Your weekend open-water slot. Silvermine proved the fitness; this tests wetsuit, salt, swell and sighting."
+    },
+    {
+      "d": "2026-09-07",
+      "w": 4,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest."
+    },
+    {
+      "d": "2026-09-08",
+      "w": 4,
+      "t": "swim",
+      "title": "Pool 2,000 m",
+      "gym": "Legs (last)",
+      "min": 50,
+      "detail": "400 warm-up, 4 x 300 off 30 s, 400 easy. PM: final Legs session of the block - light, nothing heavy."
+    },
+    {
+      "d": "2026-09-09",
+      "w": 4,
+      "t": "bike",
+      "title": "Bike 60 min - 3 x 8 min",
+      "gym": "Push",
+      "min": 60,
+      "detail": "3 x 8 min at race effort with 5 min easy between. PM: Push."
+    },
+    {
+      "d": "2026-09-10",
+      "w": 4,
+      "t": "run",
+      "title": "Run 8 km with 4 x 3 min",
+      "gym": "Pull (back, last)",
+      "min": 50,
+      "detail": "8 km with 4 x 3 min at race effort. PM: last back day of the block."
+    },
+    {
+      "d": "2026-09-11",
+      "w": 4,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest."
+    },
+    {
+      "d": "2026-09-12",
+      "w": 4,
+      "t": "brick",
+      "title": "RACE REHEARSAL - 50 km + 8 km",
+      "gym": null,
+      "min": 160,
+      "key": true,
+      "detail": "Wake at race time. Eat the race breakfast. 50 km at race effort, then 8 km at race pace. Exact kit, exact nutrition, exact transition.",
+      "why": "After this, nothing you do makes you fitter. Everything from here is about arriving fresh."
+    },
+    {
+      "d": "2026-09-13",
+      "w": 4,
+      "t": "swim",
+      "title": "SEA SWIM 2,000 m continuous",
+      "gym": null,
+      "min": 60,
+      "key": true,
+      "detail": "2,000 m unbroken in the wetsuit. No stopping. Race simulation. Then a 30 min walk."
+    },
+    {
+      "d": "2026-09-14",
+      "w": 5,
+      "t": "rest",
+      "title": "Rest",
+      "gym": null,
+      "min": 0,
+      "detail": "Full rest."
+    },
+    {
+      "d": "2026-09-15",
+      "w": 5,
+      "t": "bike",
+      "title": "Bike 45 min - 4 x 3 min",
+      "gym": "Full body (last)",
+      "min": 45,
+      "detail": "4 x 3 min at race effort. PM: one combined light full-body session. No legs. Last gym of the block."
+    },
+    {
+      "d": "2026-09-16",
+      "w": 5,
+      "t": "run",
+      "title": "Run 6 km easy",
+      "gym": null,
+      "min": 40,
+      "detail": "6 km easy with 4 x 1 min pickups at race pace. Nothing more."
+    },
+    {
+      "d": "2026-09-17",
+      "w": 5,
+      "t": "swim",
+      "title": "Pool 1,200 m sharpener",
+      "gym": null,
+      "min": 30,
+      "detail": "1,200 m including 4 x 100 at race pace. Sharp and short."
+    },
+    {
+      "d": "2026-09-18",
+      "w": 5,
+      "t": "other",
+      "title": "Travel to Mossel Bay",
+      "gym": null,
+      "min": 30,
+      "detail": "30 min easy spin. Pack. Drive - roughly four hours on the N2. Travel Friday, not Saturday."
+    },
+    {
+      "d": "2026-09-19",
+      "w": 5,
+      "t": "other",
+      "title": "Shake-out + registration",
+      "gym": null,
+      "min": 40,
+      "key": true,
+      "detail": "15 min jog, 10 min swim at Santos Beach to see the swim exit. Registration 11h30-16h30 at Diaz Strand. Bike check. Off your feet by 16h00."
+    },
+    {
+      "d": "2026-09-20",
+      "w": 5,
+      "t": "race",
+      "title": "RACE DAY",
+      "gym": null,
+      "min": 360,
+      "key": true,
+      "detail": "Garden Route Triathlon Ultra - 2 km swim, 80 km bike, 20 km run."
+    }
+  ],
+  "effort": {
+    "note": "Race effort is not 'how fast can I go'. It is the hardest pace you could hold all day and still run at the end of it. For the first hour it should feel frustratingly easy. Heart rate is the master control on every surface; pace and speed drift with wind, gradient, heat and fatigue.",
+    "surfaces": [
+      {
+        "surface": "Road bike, flat",
+        "z2": "26-28 km/h @ 131-150 bpm",
+        "race": "28-31 km/h @ 140-150 bpm",
+        "hard": "Above 155 bpm",
+        "cue": "Full sentences at race effort. If you cannot, you are over."
+      },
+      {
+        "surface": "Road bike, climbing",
+        "z2": "Whatever holds the HR",
+        "race": "Cap at 155 bpm, ignore speed",
+        "hard": "Above 160 bpm",
+        "cue": "Do not surge over the top. Keep pedalling on the descent."
+      },
+      {
+        "surface": "Wattbike / gym bike",
+        "z2": "126-145 bpm, cadence 85-95",
+        "race": "135-145 bpm, cadence 85-95",
+        "hard": "Above 150 bpm",
+        "cue": "Indoors runs 3-5 bpm HIGH for the same effort - no airflow. Subtract 5 bpm from road targets, or put a fan on."
+      },
+      {
+        "surface": "Run, road",
+        "z2": "6:45-7:15/km @ 131-150 bpm",
+        "race": "6:30-6:50/km @ 150-160 bpm",
+        "hard": "Above 165 bpm",
+        "cue": "Three or four words at a time. Off the bike, the first 2 km always feel strange."
+      },
+      {
+        "surface": "Run, treadmill",
+        "z2": "Same pace at 1% incline",
+        "race": "Same pace at 1% incline",
+        "hard": "Above 165 bpm",
+        "cue": "A flat treadmill is easier than road. Set 1% and the pace numbers transfer."
+      },
+      {
+        "surface": "Swim, pool",
+        "z2": "2:00-2:10/100 m",
+        "race": "1:55-2:05/100 m",
+        "hard": "Anything that breaks your stroke",
+        "cue": "Do not look at heart rate in the water. It lies."
+      },
+      {
+        "surface": "Swim, open water",
+        "z2": "2:20-2:35/100 m",
+        "race": "2:10-2:20/100 m",
+        "hard": "Any sprint off the start",
+        "cue": "Most of your time loss is swimming further than 2 km, not swimming slowly."
+      }
+    ],
+    "race_day": [
+      {
+        "where": "Swim, 2 km",
+        "hr": "Do not look",
+        "rpe": "5/10",
+        "target": "~2:10-2:20/100 m",
+        "note": "Settle for 200 m. Everyone else goes out too hard."
+      },
+      {
+        "where": "Bike, km 0-20",
+        "hr": "135-145",
+        "rpe": "5/10",
+        "target": "28-30 km/h",
+        "note": "Deliberately too easy. Full sentences."
+      },
+      {
+        "where": "Bike, km 20-70",
+        "hr": "140-150",
+        "rpe": "6/10",
+        "target": "28-31 km/h",
+        "note": "Short sentences, five to eight words."
+      },
+      {
+        "where": "Bike, km 70-80",
+        "hr": "138-148",
+        "rpe": "5/10",
+        "target": "Ease off",
+        "note": "Spin. Save it for the run."
+      },
+      {
+        "where": "Run, km 0-5",
+        "hr": "145-155",
+        "rpe": "6/10",
+        "target": "6:45-7:00/km",
+        "note": "Legs feel strange. It passes. Do not judge your day on it."
+      },
+      {
+        "where": "Run, km 5-15",
+        "hr": "150-160",
+        "rpe": "7/10",
+        "target": "6:30-6:50/km",
+        "note": "Run 9 min, walk 1 min through aid stations. From km 1, not km 14."
+      },
+      {
+        "where": "Run, km 15-20",
+        "hr": "158-168",
+        "rpe": "8/10",
+        "target": "Whatever is left",
+        "note": "The only place you empty the tank."
+      }
+    ]
+  },
+  "fuel": {
+    "daily": "Eating at 3,000+ kcal with protein at 160-180 g and carbohydrate deliberately high. The cut is off until 20 September - you cannot absorb a peak block and a deficit at the same time.",
+    "rows": [
+      {
+        "when": "Big days (Sat, Sun)",
+        "target": "6-8 g/kg carbs - 500-660 g",
+        "what": "Rice, potatoes, oats, pasta, fruit. Protein 160-180 g across the day."
+      },
+      {
+        "when": "Easy and rest days",
+        "target": "4-5 g/kg carbs - 330-415 g",
+        "what": "Same foods, smaller portions. Protein does not drop."
+      },
+      {
+        "when": "3 h before racing",
+        "target": "2-2.5 g/kg - 165-200 g",
+        "what": "Oats with honey and banana, white bread with jam, coffee. Nothing high-fibre, nothing new."
+      },
+      {
+        "when": "30 min before",
+        "target": "~25 g",
+        "what": "A gel, or a few mouthfuls of your carb mix."
+      },
+      {
+        "when": "On the bike, 2:45",
+        "target": "80 g/hr - ~220 g",
+        "what": "Two 750 ml bottles at 90 g each, plus two gels. Keep near 2:1 glucose:fructose - sucrose gets you there naturally."
+      },
+      {
+        "when": "On the run, 2:20",
+        "target": "50-60 g/hr - ~130 g",
+        "what": "A gel every 25-30 min, water at every aid station. Coke from 12 km if the stomach is holding."
+      },
+      {
+        "when": "Sodium",
+        "target": "500-700 mg/hr",
+        "what": "Cool spring morning - stay at the low end. Do not over-drink."
+      }
+    ]
+  }
+}
