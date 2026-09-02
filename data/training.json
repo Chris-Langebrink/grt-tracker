@@ -1,10 +1,49 @@
 {
- "generated_at": "2026-09-02T07:52:33",
+ "generated_at": "2026-09-02T08:16:00",
  "window": {
   "start": "2026-08-10",
   "end": "2026-09-02"
  },
  "activities": [
+  {
+   "id": "24205748949",
+   "start": "2026-09-01 18:03",
+   "date": "2026-09-01",
+   "type": "lap_swimming",
+   "discipline": "swim",
+   "name": "Pool Swim",
+   "km": 2.02,
+   "min": 42,
+   "sec": 2497,
+   "elev_m": 0,
+   "hr_avg_raw": 131.0,
+   "kcal": 438,
+   "hr_trace": [
+    94,
+    105,
+    105,
+    119,
+    126,
+    117,
+    125,
+    129,
+    148,
+    146,
+    146,
+    143,
+    137,
+    136,
+    132,
+    139,
+    139,
+    140,
+    140,
+    136,
+    144
+   ],
+   "hr_avg": 131,
+   "pace": "2:04/100m"
+  },
   {
    "id": "24198460365",
    "start": "2026-09-01 17:24",
@@ -1425,9 +1464,9 @@
   {
    "date": "2026-09-01",
    "rhr": 45,
-   "steps": 3414,
+   "steps": 5121,
    "stress": 22,
-   "bb_low": 45,
+   "bb_low": 27,
    "bb_high": 99,
    "sleep_h": 6.8,
    "deep_min": 89,
@@ -1436,13 +1475,15 @@
   },
   {
    "date": "2026-09-02",
-   "rhr": null,
-   "steps": null,
-   "stress": null,
-   "bb_low": null,
-   "bb_high": null,
-   "hrv": null,
-   "hrv_status": null
+   "rhr": 45,
+   "steps": 43,
+   "stress": 16,
+   "bb_low": 34,
+   "bb_high": 90,
+   "sleep_h": 7.9,
+   "deep_min": 76,
+   "hrv": 48,
+   "hrv_status": "UNBALANCED"
   }
  ],
  "caveat": "Recorded distance and duration are a floor, not a total - the watch starts late, auto-splits and runs flat. HR above 190 bpm is dropped as an optical artefact."

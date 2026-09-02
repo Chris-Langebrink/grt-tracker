@@ -69,6 +69,29 @@ Chris often leaves an `indoor_cardio` timer running across a whole gym-plus-endu
 
 The split is where churn collapses. `hr_trace` is on every activity over 25 minutes; read it yourself before concluding anything about a Cardio log. **The gym almost always comes first**, which is the correct order when the two share a slot.
 
+### Garmin data arrives late, and the token lives on one machine only
+
+Two operational facts, both learned the hard way on 2 September:
+
+**Activities upload late.** Tuesday's 2,020 m swim was recorded at 18:03 and was still
+absent from Garmin's API at 07:53 the next morning. It appeared later that day. So a
+session missing from the morning sync is not evidence of a missed session - it is
+often just a watch that has not talked to the phone yet. The sync pulls a three-week
+window every run, so **revisit recent verdicts in `data/status.json`** rather than
+leaving an early wrong call standing.
+
+**Only one machine can hold a live Garmin session.** Garmin rotates the refresh token
+on every use and invalidates the previous one. A local sync therefore kills any copy
+of that token held anywhere else. This broke the first cloud run: the token pasted
+into the environment was revoked ten minutes later by a local sync, and the routine
+got a 401 with a perfectly valid-looking credential.
+
+That is why **the sync is local and the routine is not**. `scripts/sync_and_push.ps1`
+runs at 07:50 on Chris's machine, owns the token, and pushes `data/training.json`. The
+08:03 routine reads that file out of the repo and never touches a credential. If
+`generated_at` is more than 18 hours old, the sync did not run - say so plainly rather
+than reporting the day as untrained.
+
 ### Optical heart rate lies on the bike
 
 Cycling files routinely contain 200–240 bpm spikes. Those are not heart rates — they are the wrist sensor picking up cadence. Everything above **190 bpm is dropped** before any average is taken, so figures here differ from what Garmin displays. Garmin's own averages include the artefacts and read 5–15 bpm high on rides.
@@ -99,7 +122,7 @@ Resting heart rate matters as **drift against his own baseline**, not as an abso
 
 Runs at 08:00 SAST daily. Full instructions in [`.claude/routines/daily-brief.md`](.claude/routines/daily-brief.md). In short:
 
-1. `python scripts/sync_garmin.py` — rewrites `data/training.json` from Garmin.
+1. Read `data/training.json`, pushed from Chris's machine at 07:50. The routine holds no Garmin credential.
 2. Compare **yesterday's** planned session in `plan.json` against what actually landed, reading `hr_trace` where a Cardio log might be hiding something.
 3. Write `data/status.json` — a verdict per date, with the evidence that supports it.
 4. Write `data/brief.json` — the headline and body that appear at the top of his phone.
