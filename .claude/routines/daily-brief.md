@@ -4,7 +4,9 @@ The prompt below is what the scheduled routine runs. Keep this file and the
 registered routine in sync: edit here, then push, then update the routine with
 `RemoteTrigger action=update`.
 
-Registered as: **Garden Route Ultra — daily brief**
+Registered as: **GRT Ultra - daily brief (08:03 SAST)**
+Trigger id: `trig_013C4qTohv23Wxg96cFfw83f`
+Model: `claude-opus-5` — the brief is the product, and reading HR traces is a judgement call
 Cron: `3 6 * * *` UTC (08:03 SAST)
 Repo source: `https://github.com/Chris-Langebrink/grt-tracker`
 Requires: `GARMIN_TOKENS` in the environment (base64 of `~/.garminconnect/garmin_tokens.json`)
