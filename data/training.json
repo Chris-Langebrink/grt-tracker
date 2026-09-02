@@ -1,10 +1,45 @@
 {
- "generated_at": "2026-08-31T19:47:30",
+ "generated_at": "2026-09-02T07:52:33",
  "window": {
   "start": "2026-08-10",
-  "end": "2026-08-31"
+  "end": "2026-09-02"
  },
  "activities": [
+  {
+   "id": "24198460365",
+   "start": "2026-09-01 17:24",
+   "date": "2026-09-01",
+   "type": "indoor_cardio",
+   "discipline": "gym",
+   "name": "Cardio",
+   "km": 0.0,
+   "min": 35,
+   "sec": 2119,
+   "elev_m": 0,
+   "hr_avg_raw": 96.0,
+   "kcal": 167,
+   "hr_trace": [
+    91,
+    94,
+    103,
+    93,
+    82,
+    84,
+    89,
+    82,
+    89,
+    91,
+    87,
+    104,
+    109,
+    121,
+    110,
+    92,
+    113,
+    99
+   ],
+   "hr_avg": 96
+  },
   {
    "id": "24169528970",
    "start": "2026-08-30 10:02",
@@ -1377,15 +1412,37 @@
   },
   {
    "date": "2026-08-31",
-   "rhr": 48,
-   "steps": 2545,
-   "stress": 19,
+   "rhr": 46,
+   "steps": 2953,
+   "stress": 18,
    "bb_low": 34,
    "bb_high": 96,
    "sleep_h": 8.4,
    "deep_min": 47,
    "hrv": 65,
    "hrv_status": "UNBALANCED"
+  },
+  {
+   "date": "2026-09-01",
+   "rhr": 45,
+   "steps": 3414,
+   "stress": 22,
+   "bb_low": 45,
+   "bb_high": 99,
+   "sleep_h": 6.8,
+   "deep_min": 89,
+   "hrv": 60,
+   "hrv_status": "UNBALANCED"
+  },
+  {
+   "date": "2026-09-02",
+   "rhr": null,
+   "steps": null,
+   "stress": null,
+   "bb_low": null,
+   "bb_high": null,
+   "hrv": null,
+   "hrv_status": null
   }
  ],
  "caveat": "Recorded distance and duration are a floor, not a total - the watch starts late, auto-splits and runs flat. HR above 190 bpm is dropped as an optical artefact."

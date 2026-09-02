@@ -100,3 +100,50 @@ A second routine runs Sunday evening with the same setup but a different task:
 review the week against the plan, adjust the week ahead in `plan.json` if the
 data warrants it, and write a longer brief. Registered separately so the daily
 one stays cheap and predictable.
+
+---
+
+## Cloud environment
+
+The routine needs an environment at [claude.ai/code](https://claude.ai/code) — open the
+cloud icon in the row above the message box, then **Add cloud environment**. There is no
+settings page or direct URL for it.
+
+| Field | Value |
+|---|---|
+| **Name** | `grt-tracker` |
+| **Network access** | **Custom**, with the defaults included (PyPI is needed), plus the five Garmin hosts below |
+| **Environment variables** | `GARMIN_TOKENS=<base64 of ~/.garminconnect/garmin_tokens.json>` |
+| **Setup script** | the contents of [`scripts/cloud-setup.sh`](../../scripts/cloud-setup.sh) |
+
+Garmin hosts for the Custom allowlist:
+
+```
+sso.garmin.com
+connect.garmin.com
+connectapi.garmin.com
+diauth.garmin.com
+thegarth.s3.amazonaws.com
+```
+
+`thegarth.s3.amazonaws.com` is not Garmin — `garth` fetches its OAuth consumer key from
+that bucket during login. Without it, authentication fails with a misleading error.
+
+Produce the token value on Windows with:
+
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("$env:USERPROFILE\.garminconnect\garmin_tokens.json")) | Set-Clipboard
+```
+
+It is one line of `A-Za-z0-9+/=` and needs no quotes in the `.env` field. It is a live
+credential with 37 scopes and a refresh token — treat it accordingly, and rotate the
+Garmin password if it is ever pasted anywhere.
+
+**Do not put the token in the setup script.** That script's filesystem is snapshotted and
+reused for about a week, so a token written there outlives its rotation.
+
+### Getting the environment id
+
+The UI does not show it. Create any routine against this environment at
+[claude.ai/code/routines](https://claude.ai/code/routines), then read the id back with
+`RemoteTrigger action=list` and update that routine in place with the real prompt.
