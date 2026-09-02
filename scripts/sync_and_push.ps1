@@ -26,8 +26,10 @@ function Say($m) {
 
 Say "=== sync starting ==="
 
-git pull --rebase --quiet origin main
-if (-not $?) { Say "git pull failed - stopping"; exit 1 }
+# --autostash, so an unrelated edit sitting in the working tree does not kill
+# the sync. Without it, one uncommitted file stops the brief for the day.
+git pull --rebase --autostash --quiet origin main
+if ($LASTEXITCODE -ne 0) { Say "git pull failed (exit $LASTEXITCODE) - stopping"; exit 1 }
 
 $py = Join-Path (Split-Path -Parent $repo) ".venv\Scripts\python.exe"
 if (-not (Test-Path $py)) { $py = "python" }

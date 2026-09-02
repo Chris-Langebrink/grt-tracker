@@ -28,7 +28,9 @@ $settings = New-ScheduledTaskSettingsSet `
   -AllowStartIfOnBatteries `
   -ExecutionTimeLimit (New-TimeSpan -Minutes 20)
 
-try { Unregister-ScheduledTask -TaskName $name -Confirm:$false } catch {}
+# -ErrorAction Stop, or the "task not found" error is non-terminating, skips
+# the catch, and still reports failure on a first install.
+try { Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAction Stop } catch {}
 
 Register-ScheduledTask -TaskName $name -Action $action -Trigger $trigger `
   -Settings $settings -Description "Syncs Garmin and pushes training.json for the Garden Route Ultra tracker." | Out-Null
