@@ -602,9 +602,14 @@
         "how": "Up on two feet, down on one, over a step. Lower for four seconds. This is the one that actually builds tendon."
       },
       {
-        "n": "Banded eversion and inversion",
-        "dose": "3 x 15 each way, both feet",
-        "how": "Light band, foot turns out then in against it. Slow, controlled, small range. This is the direct answer to a rotation problem."
+        "n": "Banded eversion (peroneals)",
+        "dose": "3 x 15 each foot",
+        "how": "Sole turns OUTWARD against the band - weight would roll to the inner edge. Sit with the leg straight, loop the band round the forefoot and anchor it on the INSIDE, then push the sole out. Shin and knee stay dead still: if the whole leg swivels you are rotating at the hip, which is the usual cheat and trains nothing. Do this one first - peroneal weakness is what lets an ankle roll."
+      },
+      {
+        "n": "Banded inversion (tib posterior)",
+        "dose": "3 x 15 each foot",
+        "how": "The mirror image: sole turns INWARD against the band, weight would roll to the outer edge. Anchor on the OUTSIDE and pull the sole in. Same rule - the movement is at the ankle, not the hip. Smaller range than eversion, and stop well short of anything sharp."
       },
       {
         "n": "Single-leg balance",
@@ -642,6 +647,7 @@
       ],
       "avoid": "Ibuprofen and diclofenac taken orally to train or race through this. Two separate reasons: NSAIDs during prolonged endurance exercise raise the risk of acute kidney injury and exercise-associated hyponatremia, which is documented in long-course triathlon; and masking pain on an ankle nobody has examined is how a niggle becomes a real injury. Anything stronger is a conversation with a doctor, not with a training plan."
     },
-    "sides": "Both ankles, every exercise. Three reasons: the left is your control, so the difference between sides is the number that actually tells you anything; training one side only builds an asymmetry you will feel at 15 km of a 20 km run; and the good ankle has been quietly compensating, so it has earned the work too. The right side sets the dose - do what the sore one can manage pain-free, and match it on the left."
+    "sides": "Both ankles, every exercise. Three reasons: the left is your control, so the difference between sides is the number that actually tells you anything; training one side only builds an asymmetry you will feel at 15 km of a 20 km run; and the good ankle has been quietly compensating, so it has earned the work too. The right side sets the dose - do what the sore one can manage pain-free, and match it on the left.",
+    "plane": "Inversion and eversion are the sole tilting in and out - the frontal plane, at the subtalar joint under the ankle. That is NOT internal and external rotation, which is the shin turning about its long axis and comes from the hip and knee. When you say twisting hurts, you almost certainly mean the inversion-eversion arc, which is exactly what these two drills load."
   }
 }

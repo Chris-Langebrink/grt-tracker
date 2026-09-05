@@ -425,6 +425,8 @@ function renderRehab(){
   box.innerHTML = '<div class="rehab">' +
     (r.status ? '<div class="rs">' + esc(r.status) + '</div>' : '') +
     '<div class="rw">' + esc(r.what) + '</div>' +
+    (r.plane ? '<div class="rw" style="border-left:2px solid var(--swim);' +
+      'padding-left:11px;margin-bottom:12px">' + esc(r.plane) + '</div>' : '') +
     (r.sides ? '<div class="rw" style="color:var(--text);border-left:2px solid var(--gold);' +
       'padding-left:11px;margin-bottom:12px">' + esc(r.sides) + '</div>' : '') +
     (r.exercises||[]).map(e =>
