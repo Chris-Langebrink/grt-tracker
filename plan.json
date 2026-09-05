@@ -292,7 +292,7 @@
       "min": 240,
       "key": true,
       "detail": "Roll out 07:00. 85 km at 140-150 bpm, cap 155 on the climbs. Then straight off the bike into 20 min at 6:45-7:00/km. Full race kit, 80-90 g carbs/hr from the first hour. Charge the watch tonight.",
-      "why": "Moved from Saturday for the wind. Start early: gusts 27-36 km/h all morning and it hits 28 C by 15:00. Run cut from 35 to 20 min for the ankle - the transition is the test, the extra 15 minutes are not."
+      "why": "Moved from Saturday for the wind. Start early: gusts 27-36 km/h all morning and it hits 28 C by 15:00. You already ran off the bike on 29 August - the battery died, so there is no file. This is the measurement, not the first attempt. 20 min is enough to capture the split; the extra 15 only load the ankle."
     },
     {
       "d": "2026-09-07",
@@ -583,13 +583,13 @@
     "exercises": [
       {
         "n": "Ankle alphabet",
-        "dose": "2 x through, both directions",
+        "dose": "2 x through each foot",
         "how": "Trace A-Z with the toes, foot off the ground. Range you own without pain, not the range you want."
       },
       {
         "n": "Knee-to-wall",
         "dose": "3 x 10 each side",
-        "how": "Foot flat, drive the knee past the toes toward the wall without the heel lifting. Measure the toe-to-wall gap and track it - it is your progress marker."
+        "how": "Foot flat, drive the knee past the toes toward the wall without the heel lifting. Measure the toe-to-wall gap on BOTH sides - the difference between them is your progress marker, not the absolute number. A right side more than 2 cm short of the left is the thing to close."
       },
       {
         "n": "Calf raises, double leg",
@@ -603,7 +603,7 @@
       },
       {
         "n": "Banded eversion and inversion",
-        "dose": "3 x 15 each way",
+        "dose": "3 x 15 each way, both feet",
         "how": "Light band, foot turns out then in against it. Slow, controlled, small range. This is the direct answer to a rotation problem."
       },
       {
@@ -613,7 +613,7 @@
       },
       {
         "n": "Towel scrunches",
-        "dose": "3 x 20",
+        "dose": "3 x 20 each foot",
         "how": "Toes drag a towel toward you. Boring, and it works on the small stabilisers nothing else reaches."
       }
     ],
@@ -641,6 +641,7 @@
         }
       ],
       "avoid": "Ibuprofen and diclofenac taken orally to train or race through this. Two separate reasons: NSAIDs during prolonged endurance exercise raise the risk of acute kidney injury and exercise-associated hyponatremia, which is documented in long-course triathlon; and masking pain on an ankle nobody has examined is how a niggle becomes a real injury. Anything stronger is a conversation with a doctor, not with a training plan."
-    }
+    },
+    "sides": "Both ankles, every exercise. Three reasons: the left is your control, so the difference between sides is the number that actually tells you anything; training one side only builds an asymmetry you will feel at 15 km of a 20 km run; and the good ankle has been quietly compensating, so it has earned the work too. The right side sets the dose - do what the sore one can manage pain-free, and match it on the left."
   }
 }
