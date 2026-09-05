@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04",
+  "updated": "2026-09-05",
   "note": "Written by the 08:00 routine from Garmin. A session counts as done when the evidence supports it, including sessions found inside a Cardio log and sessions Chris confirmed the watch mis-recorded.",
   "completed": {
     "2026-08-17": true,
@@ -19,7 +19,8 @@
     "2026-08-31": true,
     "2026-09-01": true,
     "2026-09-02": true,
-    "2026-09-03": true
+    "2026-09-03": true,
+    "2026-09-04": true
   },
   "evidence": {
     "2026-08-18": "Wrapped in Cardio: 42 min steady at 125 bpm after the gym block.",
@@ -34,6 +35,7 @@
     "2026-08-31": "Rest day, taken.",
     "2026-09-01": "Confirmed in the 08:16 sync: pool 2,020 m in 42 min at 2:04/100 m, HR 131, plus 35 min Legs at HR 96 (trace 82-121, light as prescribed). Both halves done. The swim had reached Garmin late and was absent from the previous morning's sync.",
     "2026-09-02": "Still unconfirmed. training.json has not moved since the 2026-09-02 08:16 pull, so the 80 min bike could never have appeared in it. Marked done pending Chris's confirmation.",
-    "2026-09-03": "No data. The 07:50 sync has not run on 3 or 4 September - training.json is still the 2026-09-02 08:16 pull and ends at Tuesday's swim, so the 10 km and Pull could not appear either way. Marked done pending confirmation; asked again in the 4 September brief."
+    "2026-09-03": "No data. The 07:50 sync has not run on 3, 4 or 5 September - training.json is still the 2026-09-02 08:16 pull and ends at Tuesday's swim, so the 10 km and Pull could not appear either way. Marked done pending confirmation; asked again in the 4 and 5 September briefs.",
+    "2026-09-04": "Rest day, and the sync is still dark - training.json has not moved from the 2026-09-02 08:16 pull, 72 hours old, so there is no evidence either way. Silence is what a taken rest day looks like, so marked taken. Wellness also stops at 2 September, which is why this morning's readiness gate was handed to Chris to call off his own watch."
   }
 }
