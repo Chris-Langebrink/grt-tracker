@@ -34,6 +34,11 @@ if ($LASTEXITCODE -ne 0) { Say "git pull failed (exit $LASTEXITCODE) - stopping"
 $py = Join-Path (Split-Path -Parent $repo) ".venv\Scripts\python.exe"
 if (-not (Test-Path $py)) { $py = "python" }
 
+# Weather first - it needs no credential, so a Garmin failure should not cost
+# the forecast. Cape Town's south-easter decides more sessions than fatigue does.
+& $py scripts/fetch_weather.py
+if ($LASTEXITCODE -ne 0) { Say "weather fetch failed (exit $LASTEXITCODE) - continuing" }
+
 & $py scripts/sync_garmin.py
 if ($LASTEXITCODE -ne 0) {
   Say "Garmin sync failed (exit $LASTEXITCODE). Re-mint tokens with:"
@@ -47,7 +52,7 @@ if ($LASTEXITCODE -ne 0) {
 # Setting it per-invocation means the task never depends on global git config.
 $ident = @("-c", "user.name=Chris Langebrink", "-c", "user.email=chris@langebrink.com")
 
-git add data/training.json
+git add data/training.json data/weather.json
 if ($LASTEXITCODE -ne 0) { Say "git add failed (exit $LASTEXITCODE)"; exit 1 }
 
 # `git diff --cached --quiet` answers through its EXIT CODE and prints nothing.

@@ -275,24 +275,24 @@
     {
       "d": "2026-09-05",
       "w": 3,
-      "t": "brick",
-      "title": "BIG BRICK - 85 km + 35 min run",
+      "t": "swim",
+      "title": "Pool 1,800 m + ankle rehab",
       "gym": null,
-      "min": 250,
-      "key": true,
-      "detail": "85 km at race effort, then straight into 35 min at 6:45-7:00/km. Full race kit, full nutrition at 80-90 g carbs/hr. Charge the watch the night before.",
-      "why": "Your dress rehearsal, bumped from 80 km because recovery is good. The RUN is the point - you have never run off the bike with data."
+      "min": 55,
+      "key": false,
+      "detail": "1,800 m easy - 400 warm-up, 6 x 150 steady off 20 s, 400 easy. Zero ankle load. Then the full rehab block. Nothing else: tomorrow is the big one.",
+      "why": "Brick moved to Sunday. Gusts hit 71 km/h by midday and 87 by evening - that is not hard riding, that is a crosswind putting you in the gravel."
     },
     {
       "d": "2026-09-06",
       "w": 3,
-      "t": "swim",
-      "title": "SEA SWIM 1,800 m + 45 min easy run",
+      "t": "brick",
+      "title": "BIG BRICK - 85 km + 20 min run",
       "gym": null,
-      "min": 105,
+      "min": 240,
       "key": true,
-      "detail": "False Bay in the wetsuit - Fish Hoek or Simon's Town, never alone. Sight every 6-8 strokes. Then 45 min easy jog, HR under 145.",
-      "why": "Your weekend open-water slot. Silvermine proved the fitness; this tests wetsuit, salt, swell and sighting."
+      "detail": "Roll out 07:00. 85 km at 140-150 bpm, cap 155 on the climbs. Then straight off the bike into 20 min at 6:45-7:00/km. Full race kit, 80-90 g carbs/hr from the first hour. Charge the watch tonight.",
+      "why": "Moved from Saturday for the wind. Start early: gusts 27-36 km/h all morning and it hits 28 C by 15:00. Run cut from 35 to 20 min for the ankle - the transition is the test, the extra 15 minutes are not."
     },
     {
       "d": "2026-09-07",
@@ -570,5 +570,77 @@
         "what": "Cool spring morning - stay at the low end. Do not over-drink."
       }
     ]
+  },
+  "rehab": {
+    "what": "Right ankle - sore on rotation since 31 August, worse after the 10 km treadmill run on 3 September. Fine when stable.",
+    "status": "NOT ASSESSED. This has progressed, and it is the one thing that can end the race.",
+    "rules": [
+      "Nothing that reproduces the twisting pain. Pain-free range only, every exercise.",
+      "Sharp pain means stop, not push through. Dull stretch is fine.",
+      "Do the block twice a day - once in the morning, once after training.",
+      "If it is worse the morning after a run, cut the next run and say so."
+    ],
+    "exercises": [
+      {
+        "n": "Ankle alphabet",
+        "dose": "2 x through, both directions",
+        "how": "Trace A-Z with the toes, foot off the ground. Range you own without pain, not the range you want."
+      },
+      {
+        "n": "Knee-to-wall",
+        "dose": "3 x 10 each side",
+        "how": "Foot flat, drive the knee past the toes toward the wall without the heel lifting. Measure the toe-to-wall gap and track it - it is your progress marker."
+      },
+      {
+        "n": "Calf raises, double leg",
+        "dose": "3 x 15, slow",
+        "how": "Three seconds up, three down. Progress to single leg only when 3 x 15 is easy and pain-free."
+      },
+      {
+        "n": "Eccentric heel drops",
+        "dose": "3 x 10",
+        "how": "Up on two feet, down on one, over a step. Lower for four seconds. This is the one that actually builds tendon."
+      },
+      {
+        "n": "Banded eversion and inversion",
+        "dose": "3 x 15 each way",
+        "how": "Light band, foot turns out then in against it. Slow, controlled, small range. This is the direct answer to a rotation problem."
+      },
+      {
+        "n": "Single-leg balance",
+        "dose": "3 x 30 s, then eyes closed",
+        "how": "Barefoot on the floor, then on a cushion. Proprioception is what stops the next roll."
+      },
+      {
+        "n": "Towel scrunches",
+        "dose": "3 x 20",
+        "how": "Toes drag a towel toward you. Boring, and it works on the small stabilisers nothing else reaches."
+      }
+    ],
+    "anti_inflammatory": {
+      "reasonable": [
+        {
+          "n": "Curcumin (turmeric extract)",
+          "dose": "500-1,000 mg curcuminoids daily",
+          "note": "Needs piperine or a bioavailable formulation - kitchen turmeric absorbs poorly. Evidence is modest and mostly from osteoarthritis trials, but the risk is low."
+        },
+        {
+          "n": "Ginger",
+          "dose": "1-2 g daily",
+          "note": "Modest evidence for exercise soreness. Cheap and low risk."
+        },
+        {
+          "n": "Omega-3 (EPA + DHA)",
+          "dose": "1-2 g daily",
+          "note": "Better evidence than the other two, slower to act."
+        },
+        {
+          "n": "Ice after loading",
+          "dose": "15 min",
+          "note": "After running or riding, not before."
+        }
+      ],
+      "avoid": "Ibuprofen and diclofenac taken orally to train or race through this. Two separate reasons: NSAIDs during prolonged endurance exercise raise the risk of acute kidney injury and exercise-associated hyponatremia, which is documented in long-course triathlon; and masking pain on an ankle nobody has examined is how a niggle becomes a real injury. Anything stronger is a conversation with a doctor, not with a training plan."
+    }
   }
 }

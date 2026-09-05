@@ -100,6 +100,28 @@ a{color:var(--gold)}
 .stat .sub{font-size:11.5px;color:var(--mute);margin-top:4px;line-height:1.4}
 .stat.good .v{color:var(--good)} .stat.warn .v{color:var(--warn)} .stat.bad .v{color:var(--bad)}
 
+.wx{display:flex;gap:6px;padding:11px 17px;background:var(--up);
+    border-top:1px solid var(--line);overflow-x:auto}
+.wxc{flex:1;min-width:96px;border-radius:8px;padding:8px 9px;background:var(--panel);
+     border:1px solid var(--line)}
+.wxc .wt{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.wxc .wg{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;
+         line-height:1.1;margin-top:3px;font-variant-numeric:tabular-nums}
+.wxc .ws{font-size:10px;color:var(--mute);margin-top:2px}
+.wxc.good .wg{color:var(--good)} .wxc.care .wg{color:var(--warn)}
+.wxc.poor .wg{color:var(--bad)} .wxc.no .wg{color:var(--bad)}
+.wxc.no{border-color:color-mix(in srgb,var(--bad) 45%,transparent)}
+
+.rehab{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 17px}
+.rehab .rw{font-size:12.5px;color:var(--mute);line-height:1.5;margin-bottom:12px}
+.rehab .rs{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+           color:var(--bad);margin-bottom:8px}
+.rex{display:grid;grid-template-columns:1fr auto;gap:3px 12px;padding:9px 0;
+     border-top:1px solid var(--line)}
+.rex .rn2{font-size:13.5px;font-weight:600}
+.rex .rd{font-size:11px;color:var(--gold);font-variant-numeric:tabular-nums;
+         text-align:right;white-space:nowrap;padding-top:2px}
+.rex .rh{grid-column:1/-1;font-size:12px;color:var(--mute);line-height:1.5}
 .ring{display:flex;align-items:center;gap:15px}
 .ring svg{flex:none}
 .ring .rv{font-family:"Barlow Condensed",sans-serif;font-size:38px;font-weight:700;line-height:1}
@@ -225,6 +247,7 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);
 
   <section id="today" style="margin-top:14px">
     <div class="today" id="todaycard"></div>
+    <div id="rehabbox" style="margin-top:14px"></div>
     <div class="grid2" id="readiness"></div>
   </section>
 
@@ -297,7 +320,7 @@ const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).
 const mk = (t,a) => { const e=document.createElementNS(NS,t); for(const k in a) e.setAttribute(k,a[k]); return e; };
 const today = new Date().toLocaleDateString("en-CA");
 
-let PLAN=null, DATA=null, BRIEF=null, STATUS=null, done={}, week=0, tab=0;
+let PLAN=null, DATA=null, BRIEF=null, STATUS=null, WX=null, done={}, week=0, tab=0;
 
 try { done = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) { done = {}; }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){} };
@@ -321,10 +344,10 @@ function hhmm(min){ const h=Math.floor(min/60), m=Math.round(min%60); return h? 
 /* ---------- boot ---------- */
 async function boot(){
   const grab = async (p) => { try { const r = await fetch(p + "?v=" + Date.now()); return r.ok ? await r.json() : null; } catch(e){ return null; } };
-  [PLAN, DATA, BRIEF, STATUS] = await Promise.all([grab("plan.json"), grab("data/training.json"), grab("data/brief.json"), grab("data/status.json")]);
+  [PLAN, DATA, BRIEF, STATUS, WX] = await Promise.all([grab("plan.json"), grab("data/training.json"), grab("data/brief.json"), grab("data/status.json"), grab("data/weather.json")]);
   if(!PLAN){ $("boot").innerHTML = '<div class="err">Could not load <b>plan.json</b>. If you just deployed, give GitHub Pages a minute and pull to refresh.</div>'; return; }
   week = Math.max(0, PLAN.weeks.findIndex(w => w.status === "current"));
-  countdown(); renderBrief(); renderToday(); renderReadiness();
+  countdown(); renderBrief(); renderToday(); renderRehab(); renderReadiness();
   renderLoad(); renderVolume(); renderEfficiency(); renderBanked();
   renderWeekBar(); renderRows(); renderRef(); renderFoot();
   spy();
@@ -370,7 +393,45 @@ function renderToday(){
       '<div class="det">' + esc(s.detail || "") + '</div>' +
       (s.why ? '<div class="why">' + esc(s.why) + '</div>' : '') +
     '</div>' +
-    (s.gym ? '<div class="gym">Gym tonight: <b>' + esc(s.gym) + '</b> — six hours after the endurance session, and lift first if they must share a slot.</div>' : '');
+    (s.gym ? '<div class="gym">Gym tonight: <b>' + esc(s.gym) + '</b> — six hours after the endurance session, and lift first if they must share a slot.</div>' : '')
+    + weatherStrip(s.d);
+}
+
+/* ---------- weather ---------- */
+// Verdicts key off maximum gust, not mean wind. A 20 km/h mean with 80 km/h
+// gusts reads as breezy and is not rideable.
+function weatherStrip(day){
+  if(!WX || !WX.days || !WX.days[day]) return "";
+  const w = WX.days[day].windows;
+  const order = ["early","midday","evening"];
+  const label = { early:"06–11", midday:"11–16", evening:"16–21" };
+  const cells = order.filter(k => w[k]).map(k => {
+    const v = w[k];
+    return '<div class="wxc ' + v.bike + '">' +
+      '<div class="wt">' + label[k] + '</div>' +
+      '<div class="wg">' + v.gust_max_kmh + '<span style="font-size:11px;font-weight:600">km/h</span></div>' +
+      '<div class="ws">gusts ' + v.dir + ' · ' + v.temp_c + '°C</div>' +
+      '<div class="ws">bike <b style="color:var(--text)">' + v.bike + '</b></div>' +
+      '</div>';
+  }).join("");
+  return cells ? '<div class="wx">' + cells + '</div>' : "";
+}
+
+/* ---------- ankle rehab ---------- */
+function renderRehab(){
+  const r = PLAN.rehab;
+  const box = $("rehabbox");
+  if(!r){ box.innerHTML = ""; return; }
+  box.innerHTML = '<div class="rehab">' +
+    (r.status ? '<div class="rs">' + esc(r.status) + '</div>' : '') +
+    '<div class="rw">' + esc(r.what) + '</div>' +
+    (r.exercises||[]).map(e =>
+      '<div class="rex"><div class="rn2">' + esc(e.n) + '</div>' +
+      '<div class="rd">' + esc(e.dose) + '</div>' +
+      '<div class="rh">' + esc(e.how) + '</div></div>').join("") +
+    (r.rules ? '<div class="rw" style="margin:12px 0 0;padding-top:11px;border-top:1px dashed var(--line)">' +
+      r.rules.map(x => '• ' + esc(x)).join('<br>') + '</div>' : '') +
+    '</div>';
 }
 
 /* ---------- readiness ---------- */

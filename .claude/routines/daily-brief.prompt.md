@@ -16,7 +16,28 @@ appear a day later. The sync always pulls a three-week window, so if a date in
 data/status.json has no entry, or one you are no longer confident in, revisit it
 now rather than leaving it wrong forever.
 
-STEP 2 - work out what actually happened yesterday.
+STEP 2 - check the weather before you prescribe anything outdoors.
+
+Read data/weather.json, fetched alongside the Garmin sync. Verdicts key off
+MAXIMUM GUST, not mean wind: Cape Town's south-easter routinely runs a 20 km/h
+mean with 80 km/h gusts, which reads as breezy on a forecast and is not rideable.
+
+Each day has early (06-11), midday (11-16) and evening (16-21) windows, each with
+a bike / run / open_water verdict of good, care, poor or no.
+
+  - `no` or `poor` for the bike means DO NOT send him out on the road. Say the
+    gust number, name the indoor swap - Wattbike at 135-145 bpm and cadence
+    85-95, or the pool - and say when the wind drops.
+  - Check the NEXT two days too. If a key session is unrideable today and clean
+    tomorrow, propose the swap explicitly rather than making him ask.
+  - Open water needs gusts under 25 km/h to be worth doing. Above 35 the chop
+    ruins sighting practice, which is the entire point of the session.
+  - Heat matters as well: above 26 C on a long ride, move it to the early window.
+
+He rides in Cape Town and the wind is not an excuse there, it is a constraint.
+Plan around it rather than telling him to harden up.
+
+STEP 3 - work out what actually happened yesterday.
 
 Read plan.json for yesterday's prescribed session, then data/training.json for what landed. Three rules that have burned you before:
 
@@ -24,11 +45,11 @@ Read plan.json for yesterday's prescribed session, then data/training.json for w
   - Sessions hide inside Cardio logs. Any indoor_cardio activity carries hr_trace and possibly wrapped_min. A jagged trace is lifting; a plateau at a working heart rate is endurance. The gym almost always comes first.
   - Drop heart rates above 190 bpm on rides before averaging. They are optical artefacts, not heart rates.
 
-STEP 3 - update data/status.json.
+STEP 4 - update data/status.json.
 
 Set completed[<yesterday>] to true or false and add a one-line evidence entry saying what the data showed. If you are genuinely unsure, mark it true and ask in the brief. Never silently mark a session missed.
 
-STEP 4 - write data/brief.json.
+STEP 5 - write data/brief.json.
 
     {"date": "<today>", "coach": "written by the 08:00 routine", "headline": "<one sentence>", "body": "<80-180 words>"}
 
@@ -40,7 +61,7 @@ Give him the actual target for today's session, not the label: heart rate first,
 
 Check readiness before you tell him to push. Two consecutive mornings of HRV below his 14-day mean means the next session drops to easy, and you say which parts to cut. That rule is not optional, and he will push if you let him.
 
-STEP 5 - commit and push.
+STEP 6 - commit and push.
 
     git add data/ plan.json
     git commit -m "chore(brief): $(date -u +%Y-%m-%d)"
@@ -48,7 +69,7 @@ STEP 5 - commit and push.
 
 USE `git push origin HEAD:main`, NOT `git push origin main`. A cloud runner checks out a detached HEAD and its local main ref is stale, so `git push origin main` is rejected as non-fast-forward. Do not `git pull` to fix it and do not force-push.
 
-STEP 6 - report exactly four lines:
+STEP 7 - report exactly four lines:
 
   1. What Garmin showed for yesterday, in one line.
   2. The verdict you wrote to status.json, and why.
@@ -56,3 +77,11 @@ STEP 6 - report exactly four lines:
   4. Whether the push succeeded.
 
 Do not refactor anything. Do not touch index.html. If something is broken, report it and stop - do not debug inside the routine.
+
+ONE STANDING ITEM
+
+Chris's right ankle is sore on rotation and has not been assessed. plan.json
+carries a `rehab` block - the exercises, the rules and the anti-inflammatory
+position. Ask about it before any key session and after any run, but do not open
+every brief with it. If it is worse the morning after a run, say so and cut the
+next run. Never give medical advice beyond "get it looked at" and adjusting load.

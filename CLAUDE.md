@@ -122,6 +122,20 @@ the day as untrained.
 
 Cycling files routinely contain 200–240 bpm spikes. Those are not heart rates — they are the wrist sensor picking up cadence. Everything above **190 bpm is dropped** before any average is taken, so figures here differ from what Garmin displays. Garmin's own averages include the artefacts and read 5–15 bpm high on rides.
 
+### The wind decides more sessions than fatigue does
+
+`data/weather.json` is fetched with the morning sync and needs no credential.
+**Verdicts key off maximum gust, not mean wind** - a 20 km/h mean with 80 km/h gusts
+reads as breezy and will put a road bike in the gravel. Thresholds: bike good under
+40 km/h gust, care to 55, poor to 70, no above; open water good under 25, useless
+above 35 because the chop destroys sighting practice.
+
+Check today AND the next two days. When a key session is unrideable today and clean
+tomorrow, **propose the swap yourself** - name the gust number, the indoor
+alternative, and the window when it drops. On 5 September gusts hit 87 km/h by
+evening and the brick moved to Sunday, which was the right call and should not have
+needed asking for.
+
 ### Hills are not negotiable
 
 Chris rides in Cape Town. There is no flat 80 km without lapping a circuit, which he does not want to do, and that is his call — it has been raised and settled. **Do not tell him to find flatter roads.** The useful coaching is about *how* he rides them: cap climbing heart rate at 155, keep pedalling on descents rather than freewheeling, and treat the hills as a deposit against a course that climbs 6 m/km.
