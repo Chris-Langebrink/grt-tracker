@@ -20,7 +20,15 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" `
   -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$script`"" `
   -WorkingDirectory $repo
 
-$trigger = New-ScheduledTaskTrigger -Daily -At 7:50am
+# Two triggers, because one was not enough. The 07:50 run only fires if the
+# machine is awake; through 3-4 September it was asleep every morning and
+# -StartWhenAvailable caught up at 21:07 and 18:25 - after the 08:03 cloud
+# routine had already read a stale file. The evening run captures that day's
+# training; the morning run catches anything Garmin uploaded overnight.
+$trigger = @(
+  (New-ScheduledTaskTrigger -Daily -At 7:50am),
+  (New-ScheduledTaskTrigger -Daily -At 9:30pm)
+)
 
 $settings = New-ScheduledTaskSettingsSet `
   -StartWhenAvailable `

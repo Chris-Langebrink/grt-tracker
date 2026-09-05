@@ -2,7 +2,7 @@
 
 - **Summary:** How to coach Chris to the start line on 20 September 2026 — who he is, how to read his data, and how to write the morning brief.
 - **Status:** Current
-- **Updated:** 2026-08-31
+- **Updated:** 2026-09-05
 - **Covers:** athlete profile, coaching stance, data caveats, wrapped sessions, readiness gating, the morning routine, race effort, fuelling, tone
 
 ---
@@ -91,6 +91,32 @@ runs at 07:50 on Chris's machine, owns the token, and pushes `data/training.json
 08:03 routine reads that file out of the repo and never touches a credential. If
 `generated_at` is more than 18 hours old, the sync did not run - say so plainly rather
 than reporting the day as untrained.
+
+### A green sync log does not mean data landed
+
+For two days the sync reported `pushed` every evening and pushed nothing. Three faults
+compounded:
+
+1. **No git identity was ever configured** - every earlier commit had passed
+   `-c user.name=... -c user.email=...` inline, so `git commit` in the task failed with
+   *Author identity unknown*.
+2. **The commit's exit code was never checked**, so the failure was invisible.
+3. **`git push` with nothing to push exits 0**, so the script logged `pushed` and
+   returned success.
+
+`scripts/sync_and_push.ps1` now sets the identity per-invocation, checks every exit
+code, and **verifies `origin/main` actually moved** before claiming success. The log
+line carries the pushed SHA.
+
+One PowerShell trap worth remembering: `git diff --cached --quiet` answers through its
+exit code and prints nothing, so `if (git diff --cached --quiet)` tests empty stdout
+and is always false. Read `$LASTEXITCODE` instead.
+
+**The task also fires late.** It only runs when the machine is awake; on 3 and 4
+September it was asleep at 07:50 and `-StartWhenAvailable` caught up at 21:07 and
+18:25, after the 08:03 routine had already read a stale file. There are now two daily
+triggers, 07:50 and 21:30. If `generated_at` is stale, say so and ask - never report
+the day as untrained.
 
 ### Optical heart rate lies on the bike
 

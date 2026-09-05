@@ -34,8 +34,8 @@
     "2026-08-29": "Brick completed. Ride was continuous but auto-split into four files; battery died before the run.",
     "2026-08-31": "Rest day, taken.",
     "2026-09-01": "Confirmed in the 08:16 sync: pool 2,020 m in 42 min at 2:04/100 m, HR 131, plus 35 min Legs at HR 96 (trace 82-121, light as prescribed). Both halves done. The swim had reached Garmin late and was absent from the previous morning's sync.",
-    "2026-09-02": "Still unconfirmed. training.json has not moved since the 2026-09-02 08:16 pull, so the 80 min bike could never have appeared in it. Marked done pending Chris's confirmation.",
-    "2026-09-03": "No data. The 07:50 sync has not run on 3, 4 or 5 September - training.json is still the 2026-09-02 08:16 pull and ends at Tuesday's swim, so the 10 km and Pull could not appear either way. Marked done pending confirmation; asked again in the 4 and 5 September briefs.",
-    "2026-09-04": "Rest day, and the sync is still dark - training.json has not moved from the 2026-09-02 08:16 pull, 72 hours old, so there is no evidence either way. Silence is what a taken rest day looks like, so marked taken. Wellness also stops at 2 September, which is why this morning's readiness gate was handed to Chris to call off his own watch."
+    "2026-09-02": "Push (71 min Cardio, jagged 89-130) then a separate 60 min indoor_cycling at HR 130, trace steady 119-140. That is the downgraded session the brief called for after HRV came in at 48 - the 2 x 18 min blocks were correctly dropped. Timer was split properly, so nothing had to be unwrapped.",
+    "2026-09-03": "Pull (57 min Cardio) then 10.26 km treadmill in 61 min at 5:59/km, HR 129, trace flat 123-137. Run done, race-effort block not attempted - correct, HRV was still 59 against a 61 mean. 5:59/km at 129 bpm against the 22 July anchor of 6:00/km at 149 bpm is 20 beats cheaper for the same pace.",
+    "2026-09-04": "Rest day, taken. Nothing recorded and nothing expected."
   }
 }
