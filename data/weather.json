@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-06",
+ "generated_at": "2026-09-07",
  "location": "Cape Town",
  "source": "open-meteo.com",
  "units": "km/h, degrees C, mm",
@@ -10,68 +10,33 @@
  },
  "note": "Verdicts key off MAXIMUM GUST, not mean wind. Cape Town's south-easter routinely runs a 20 km/h mean with 80 km/h gusts, which is rideable on paper and not in practice.",
  "days": {
-  "2026-09-06": {
-   "windows": {
-    "early": {
-     "gust_max_kmh": 36,
-     "wind_mean_kmh": 10,
-     "dir": "SE",
-     "temp_c": 16,
-     "rain_mm": 0.0,
-     "bike": "good",
-     "run": "good",
-     "open_water": "poor"
-    },
-    "midday": {
-     "gust_max_kmh": 28,
-     "wind_mean_kmh": 9,
-     "dir": "SE",
-     "temp_c": 26,
-     "rain_mm": 0.0,
-     "bike": "good",
-     "run": "good",
-     "open_water": "care"
-    },
-    "evening": {
-     "gust_max_kmh": 28,
-     "wind_mean_kmh": 9,
-     "dir": "SE",
-     "temp_c": 26,
-     "rain_mm": 0.0,
-     "bike": "good",
-     "run": "good",
-     "open_water": "care"
-    }
-   },
-   "calmest": "midday"
-  },
   "2026-09-07": {
    "windows": {
     "early": {
-     "gust_max_kmh": 18,
-     "wind_mean_kmh": 2,
+     "gust_max_kmh": 24,
+     "wind_mean_kmh": 3,
      "dir": "SE",
-     "temp_c": 21,
+     "temp_c": 20,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
      "open_water": "good"
     },
     "midday": {
-     "gust_max_kmh": 27,
+     "gust_max_kmh": 28,
      "wind_mean_kmh": 7,
-     "dir": "WSW",
-     "temp_c": 28,
+     "dir": "W",
+     "temp_c": 27,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
      "open_water": "care"
     },
     "evening": {
-     "gust_max_kmh": 31,
-     "wind_mean_kmh": 10,
-     "dir": "S",
-     "temp_c": 25,
+     "gust_max_kmh": 28,
+     "wind_mean_kmh": 4,
+     "dir": "SW",
+     "temp_c": 24,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
@@ -83,19 +48,19 @@
   "2026-09-08": {
    "windows": {
     "early": {
-     "gust_max_kmh": 20,
-     "wind_mean_kmh": 4,
-     "dir": "SSE",
-     "temp_c": 21,
+     "gust_max_kmh": 26,
+     "wind_mean_kmh": 5,
+     "dir": "E",
+     "temp_c": 20,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "good"
+     "open_water": "care"
     },
     "midday": {
-     "gust_max_kmh": 38,
-     "wind_mean_kmh": 9,
-     "dir": "NW",
+     "gust_max_kmh": 36,
+     "wind_mean_kmh": 10,
+     "dir": "SSW",
      "temp_c": 28,
      "rain_mm": 0.0,
      "bike": "good",
@@ -103,7 +68,7 @@
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 33,
+     "gust_max_kmh": 27,
      "wind_mean_kmh": 9,
      "dir": "SSE",
      "temp_c": 24,
@@ -118,17 +83,17 @@
   "2026-09-09": {
    "windows": {
     "early": {
-     "gust_max_kmh": 30,
-     "wind_mean_kmh": 10,
-     "dir": "SSE",
+     "gust_max_kmh": 36,
+     "wind_mean_kmh": 13,
+     "dir": "SE",
      "temp_c": 18,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "care"
+     "open_water": "poor"
     },
     "midday": {
-     "gust_max_kmh": 45,
+     "gust_max_kmh": 43,
      "wind_mean_kmh": 15,
      "dir": "SSE",
      "temp_c": 23,
@@ -138,10 +103,45 @@
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 51,
-     "wind_mean_kmh": 18,
+     "gust_max_kmh": 43,
+     "wind_mean_kmh": 16,
      "dir": "SSE",
-     "temp_c": 18,
+     "temp_c": 19,
+     "rain_mm": 0.0,
+     "bike": "care",
+     "run": "good",
+     "open_water": "poor"
+    }
+   },
+   "calmest": "early"
+  },
+  "2026-09-10": {
+   "windows": {
+    "early": {
+     "gust_max_kmh": 28,
+     "wind_mean_kmh": 9,
+     "dir": "SSE",
+     "temp_c": 17,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "care"
+    },
+    "midday": {
+     "gust_max_kmh": 45,
+     "wind_mean_kmh": 14,
+     "dir": "SSW",
+     "temp_c": 19,
+     "rain_mm": 0.0,
+     "bike": "care",
+     "run": "good",
+     "open_water": "poor"
+    },
+    "evening": {
+     "gust_max_kmh": 51,
+     "wind_mean_kmh": 16,
+     "dir": "SSE",
+     "temp_c": 17,
      "rain_mm": 0.0,
      "bike": "care",
      "run": "care",
