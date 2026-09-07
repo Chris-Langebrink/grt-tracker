@@ -26,21 +26,21 @@
      "gust_max_kmh": 28,
      "wind_mean_kmh": 7,
      "dir": "W",
-     "temp_c": 27,
+     "temp_c": 28,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
      "open_water": "care"
     },
     "evening": {
-     "gust_max_kmh": 28,
+     "gust_max_kmh": 24,
      "wind_mean_kmh": 4,
      "dir": "SW",
-     "temp_c": 24,
+     "temp_c": 25,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "care"
+     "open_water": "good"
     }
    },
    "calmest": "early"
@@ -48,28 +48,28 @@
   "2026-09-08": {
    "windows": {
     "early": {
-     "gust_max_kmh": 26,
-     "wind_mean_kmh": 5,
-     "dir": "E",
-     "temp_c": 20,
+     "gust_max_kmh": 20,
+     "wind_mean_kmh": 3,
+     "dir": "SE",
+     "temp_c": 19,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "good"
+    },
+    "midday": {
+     "gust_max_kmh": 28,
+     "wind_mean_kmh": 7,
+     "dir": "W",
+     "temp_c": 28,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
      "open_water": "care"
     },
-    "midday": {
-     "gust_max_kmh": 36,
-     "wind_mean_kmh": 10,
-     "dir": "SSW",
-     "temp_c": 28,
-     "rain_mm": 0.0,
-     "bike": "good",
-     "run": "good",
-     "open_water": "poor"
-    },
     "evening": {
-     "gust_max_kmh": 27,
-     "wind_mean_kmh": 9,
+     "gust_max_kmh": 28,
+     "wind_mean_kmh": 10,
      "dir": "SSE",
      "temp_c": 24,
      "rain_mm": 0.0,
@@ -83,30 +83,30 @@
   "2026-09-09": {
    "windows": {
     "early": {
-     "gust_max_kmh": 36,
-     "wind_mean_kmh": 13,
+     "gust_max_kmh": 34,
+     "wind_mean_kmh": 12,
      "dir": "SE",
      "temp_c": 18,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "poor"
+     "open_water": "care"
     },
     "midday": {
-     "gust_max_kmh": 43,
-     "wind_mean_kmh": 15,
+     "gust_max_kmh": 48,
+     "wind_mean_kmh": 16,
      "dir": "SSE",
-     "temp_c": 23,
+     "temp_c": 22,
      "rain_mm": 0.0,
      "bike": "care",
      "run": "good",
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 43,
-     "wind_mean_kmh": 16,
+     "gust_max_kmh": 50,
+     "wind_mean_kmh": 18,
      "dir": "SSE",
-     "temp_c": 19,
+     "temp_c": 18,
      "rain_mm": 0.0,
      "bike": "care",
      "run": "good",
@@ -118,19 +118,19 @@
   "2026-09-10": {
    "windows": {
     "early": {
-     "gust_max_kmh": 28,
-     "wind_mean_kmh": 9,
+     "gust_max_kmh": 36,
+     "wind_mean_kmh": 11,
      "dir": "SSE",
      "temp_c": 17,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "care"
+     "open_water": "poor"
     },
     "midday": {
-     "gust_max_kmh": 45,
-     "wind_mean_kmh": 14,
-     "dir": "SSW",
+     "gust_max_kmh": 44,
+     "wind_mean_kmh": 15,
+     "dir": "SSE",
      "temp_c": 19,
      "rain_mm": 0.0,
      "bike": "care",
@@ -138,12 +138,12 @@
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 51,
-     "wind_mean_kmh": 16,
+     "gust_max_kmh": 62,
+     "wind_mean_kmh": 19,
      "dir": "SSE",
-     "temp_c": 17,
+     "temp_c": 18,
      "rain_mm": 0.0,
-     "bike": "care",
+     "bike": "poor",
      "run": "care",
      "open_water": "no"
     }
