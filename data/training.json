@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-11T18:19:37",
+ "generated_at": "2026-09-12T09:01:04",
  "window": {
   "start": "2026-08-10",
-  "end": "2026-09-11"
+  "end": "2026-09-12"
  },
  "activities": [
   {
@@ -2250,13 +2250,25 @@
   {
    "date": "2026-09-11",
    "rhr": 47,
-   "steps": 2094,
-   "stress": 25,
+   "steps": 2472,
+   "stress": 24,
    "bb_low": 29,
    "bb_high": 96,
    "sleep_h": 7.2,
    "deep_min": 48,
    "hrv": 68,
+   "hrv_status": "BALANCED"
+  },
+  {
+   "date": "2026-09-12",
+   "rhr": 46,
+   "steps": 168,
+   "stress": 11,
+   "bb_low": 44,
+   "bb_high": 99,
+   "sleep_h": 6.9,
+   "deep_min": 90,
+   "hrv": 69,
    "hrv_status": "BALANCED"
   }
  ],
