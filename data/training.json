@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-13T14:21:49",
+ "generated_at": "2026-09-14T18:47:06",
  "window": {
   "start": "2026-08-10",
-  "end": "2026-09-13"
+  "end": "2026-09-14"
  },
  "activities": [
   {
@@ -2555,6 +2555,16 @@
    "deep_min": 57,
    "hrv": 70,
    "hrv_status": "BALANCED"
+  },
+  {
+   "date": "2026-09-14",
+   "rhr": null,
+   "steps": null,
+   "stress": null,
+   "bb_low": null,
+   "bb_high": null,
+   "hrv": null,
+   "hrv_status": null
   }
  ],
  "caveat": "Recorded distance and duration are a floor, not a total - the watch starts late, auto-splits and runs flat. HR above 190 bpm is dropped as an optical artefact."
