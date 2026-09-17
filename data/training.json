@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-14T18:47:06",
+ "generated_at": "2026-09-17T17:20:55",
  "window": {
   "start": "2026-08-10",
-  "end": "2026-09-14"
+  "end": "2026-09-17"
  },
  "activities": [
   {
@@ -2558,6 +2558,36 @@
   },
   {
    "date": "2026-09-14",
+   "rhr": null,
+   "steps": null,
+   "stress": null,
+   "bb_low": null,
+   "bb_high": null,
+   "hrv": null,
+   "hrv_status": null
+  },
+  {
+   "date": "2026-09-15",
+   "rhr": null,
+   "steps": null,
+   "stress": null,
+   "bb_low": null,
+   "bb_high": null,
+   "hrv": null,
+   "hrv_status": null
+  },
+  {
+   "date": "2026-09-16",
+   "rhr": null,
+   "steps": null,
+   "stress": null,
+   "bb_low": null,
+   "bb_high": null,
+   "hrv": null,
+   "hrv_status": null
+  },
+  {
+   "date": "2026-09-17",
    "rhr": null,
    "steps": null,
    "stress": null,
