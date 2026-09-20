@@ -149,6 +149,44 @@
     }
    },
    "calmest": "early"
+  },
+  "2026-09-20": {
+   "location": "Mossel Bay (Santos Beach) - RACE DAY, not Cape Town",
+   "fetched_at": "2026-09-20T08:00 by the morning routine, live from open-meteo (the 07:50 sync did not run)",
+   "windows": {
+    "early": {
+     "gust_max_kmh": 16,
+     "wind_mean_kmh": 4,
+     "dir": "W",
+     "temp_c": 15,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "good"
+    },
+    "midday": {
+     "gust_max_kmh": 25,
+     "wind_mean_kmh": 9,
+     "dir": "SE",
+     "temp_c": 19,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "good"
+    },
+    "evening": {
+     "gust_max_kmh": 24,
+     "wind_mean_kmh": 5,
+     "dir": "SE",
+     "temp_c": 16,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "good"
+    }
+   },
+   "calmest": "early",
+   "race_hours": "07:00 gun gust 6.5 km/h / 13 C; 08-10 (bike) 9.0-15.5; 11-13 (run) 18.7-24.8 SE; max temp 19.5 C at 12:00; zero rain all day"
   }
  }
 }
