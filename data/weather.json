@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 (live routine fetch; the synced fetch is stale at 2026-09-14)",
+ "generated_at": "2026-09-22 (live routine fetch; the synced fetch is stale at 2026-09-14)",
  "location": "Cape Town",
  "source": "open-meteo.com",
  "units": "km/h, degrees C, mm",
@@ -230,28 +230,28 @@
    "windows": {
     "early": {
      "gust_max_kmh": 48,
-     "wind_mean_kmh": 9,
-     "dir": "NE",
-     "temp_c": 25,
+     "wind_mean_kmh": 10,
+     "dir": "E",
+     "temp_c": 30,
      "rain_mm": 0.0,
      "bike": "care",
      "run": "good",
      "open_water": "poor"
     },
     "midday": {
-     "gust_max_kmh": 54,
-     "wind_mean_kmh": 12,
+     "gust_max_kmh": 48,
+     "wind_mean_kmh": 10,
      "dir": "NW",
-     "temp_c": 29,
+     "temp_c": 30,
      "rain_mm": 0.0,
      "bike": "care",
-     "run": "care",
-     "open_water": "no"
+     "run": "good",
+     "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 36,
+     "gust_max_kmh": 38,
      "wind_mean_kmh": 5,
-     "dir": "NW",
+     "dir": "SW",
      "temp_c": 24,
      "rain_mm": 0.0,
      "bike": "good",
@@ -260,44 +260,81 @@
     }
    },
    "calmest": "evening",
-   "fetched_at": "2026-09-21T08:16 by the morning routine, live from open-meteo (the 07:50 sync has not run since 17 Sep)"
+   "fetched_at": "2026-09-22T08:14 by the morning routine, live from open-meteo (the 07:50 sync has not run since 17 Sep)"
   },
   "2026-09-23": {
    "location": "Cape Town",
    "windows": {
     "early": {
-     "gust_max_kmh": 35,
-     "wind_mean_kmh": 9,
-     "dir": "SSE",
-     "temp_c": 18,
-     "rain_mm": 0.0,
+     "gust_max_kmh": 27,
+     "wind_mean_kmh": 6,
+     "dir": "NNW",
+     "temp_c": 19,
+     "rain_mm": 17.7,
      "bike": "good",
      "run": "good",
      "open_water": "care"
     },
     "midday": {
-     "gust_max_kmh": 74,
-     "wind_mean_kmh": 22,
-     "dir": "SE",
+     "gust_max_kmh": 40,
+     "wind_mean_kmh": 8,
+     "dir": "SW",
      "temp_c": 21,
-     "rain_mm": 0.0,
-     "bike": "no",
-     "run": "poor",
-     "open_water": "no"
+     "rain_mm": 0.3,
+     "bike": "good",
+     "run": "good",
+     "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 77,
-     "wind_mean_kmh": 27,
-     "dir": "SE",
-     "temp_c": 19,
+     "gust_max_kmh": 47,
+     "wind_mean_kmh": 16,
+     "dir": "SSE",
+     "temp_c": 20,
      "rain_mm": 0.0,
-     "bike": "no",
-     "run": "poor",
-     "open_water": "no"
+     "bike": "care",
+     "run": "good",
+     "open_water": "poor"
     }
    },
    "calmest": "early",
-   "fetched_at": "2026-09-21T08:16 by the morning routine, live from open-meteo (the 07:50 sync has not run since 17 Sep)"
+   "fetched_at": "2026-09-22T08:14 by the morning routine, live from open-meteo (the 07:50 sync has not run since 17 Sep)"
+  },
+  "2026-09-24": {
+   "location": "Cape Town",
+   "windows": {
+    "early": {
+     "gust_max_kmh": 15,
+     "wind_mean_kmh": 3,
+     "dir": "S",
+     "temp_c": 21,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "good"
+    },
+    "midday": {
+     "gust_max_kmh": 20,
+     "wind_mean_kmh": 5,
+     "dir": "SW",
+     "temp_c": 24,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "good"
+    },
+    "evening": {
+     "gust_max_kmh": 27,
+     "wind_mean_kmh": 4,
+     "dir": "WNW",
+     "temp_c": 24,
+     "rain_mm": 0.0,
+     "bike": "good",
+     "run": "good",
+     "open_water": "care"
+    }
+   },
+   "calmest": "early",
+   "fetched_at": "2026-09-22T08:14 by the morning routine, live from open-meteo (the 07:50 sync has not run since 17 Sep)"
   }
  }
 }
