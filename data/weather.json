@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 (live routine fetch for 24-27 Sep, Cape Town; the synced fetch is stale at 2026-09-14)",
+ "generated_at": "2026-09-25 (live routine fetch for 25-28 Sep, Cape Town; the synced fetch is stale at 2026-09-14)",
  "location": "Cape Town",
  "source": "open-meteo.com",
  "units": "km/h, degrees C, mm",
@@ -339,47 +339,47 @@
   "2026-09-25": {
    "windows": {
     "early": {
-     "gust_max_kmh": 39,
-     "wind_mean_kmh": 9,
-     "dir": "W",
-     "temp_c": 16,
-     "rain_mm": 0.0,
-     "bike": "good",
+     "gust_max_kmh": 42,
+     "wind_mean_kmh": 11,
+     "dir": "NNW",
+     "temp_c": 18,
+     "rain_mm": 0.1,
+     "bike": "care",
      "run": "good",
      "open_water": "poor"
     },
     "midday": {
-     "gust_max_kmh": 38,
-     "wind_mean_kmh": 6,
-     "dir": "NW",
+     "gust_max_kmh": 42,
+     "wind_mean_kmh": 8,
+     "dir": "WNW",
      "temp_c": 20,
      "rain_mm": 0.0,
-     "bike": "good",
+     "bike": "care",
      "run": "good",
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 21,
-     "wind_mean_kmh": 5,
+     "gust_max_kmh": 26,
+     "wind_mean_kmh": 7,
      "dir": "SSW",
      "temp_c": 20,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "good"
+     "open_water": "care"
     }
    },
    "calmest": "evening",
    "location": "Cape Town",
-   "fetched": "2026-09-24 (live routine fetch)"
+   "fetched": "2026-09-25 (live routine fetch)"
   },
   "2026-09-26": {
    "windows": {
     "early": {
-     "gust_max_kmh": 58,
-     "wind_mean_kmh": 16,
+     "gust_max_kmh": 59,
+     "wind_mean_kmh": 17,
      "dir": "SSE",
-     "temp_c": 18,
+     "temp_c": 19,
      "rain_mm": 0.1,
      "bike": "poor",
      "run": "care",
@@ -390,17 +390,17 @@
      "wind_mean_kmh": 21,
      "dir": "SSE",
      "temp_c": 20,
-     "rain_mm": 0.1,
+     "rain_mm": 0.5,
      "bike": "poor",
      "run": "care",
      "open_water": "no"
     },
     "evening": {
-     "gust_max_kmh": 70,
+     "gust_max_kmh": 69,
      "wind_mean_kmh": 20,
      "dir": "SSE",
      "temp_c": 18,
-     "rain_mm": 0.3,
+     "rain_mm": 0.5,
      "bike": "poor",
      "run": "care",
      "open_water": "no"
@@ -408,33 +408,33 @@
    },
    "calmest": "early",
    "location": "Cape Town",
-   "fetched": "2026-09-24 (live routine fetch)"
+   "fetched": "2026-09-25 (live routine fetch)"
   },
   "2026-09-27": {
    "windows": {
     "early": {
-     "gust_max_kmh": 75,
-     "wind_mean_kmh": 23,
+     "gust_max_kmh": 76,
+     "wind_mean_kmh": 22,
      "dir": "SSE",
-     "temp_c": 16,
+     "temp_c": 15,
      "rain_mm": 0.0,
      "bike": "no",
      "run": "poor",
      "open_water": "no"
     },
     "midday": {
-     "gust_max_kmh": 80,
+     "gust_max_kmh": 79,
      "wind_mean_kmh": 27,
      "dir": "SE",
-     "temp_c": 17,
+     "temp_c": 16,
      "rain_mm": 0.0,
      "bike": "no",
      "run": "poor",
      "open_water": "no"
     },
     "evening": {
-     "gust_max_kmh": 82,
-     "wind_mean_kmh": 27,
+     "gust_max_kmh": 79,
+     "wind_mean_kmh": 25,
      "dir": "SE",
      "temp_c": 16,
      "rain_mm": 0.0,
@@ -445,7 +445,44 @@
    },
    "calmest": "early",
    "location": "Cape Town",
-   "fetched": "2026-09-24 (live routine fetch)"
+   "fetched": "2026-09-25 (live routine fetch)"
+  },
+  "2026-09-28": {
+   "windows": {
+    "early": {
+     "gust_max_kmh": 79,
+     "wind_mean_kmh": 20,
+     "dir": "SE",
+     "temp_c": 18,
+     "rain_mm": 0.0,
+     "bike": "no",
+     "run": "poor",
+     "open_water": "no"
+    },
+    "midday": {
+     "gust_max_kmh": 56,
+     "wind_mean_kmh": 18,
+     "dir": "SE",
+     "temp_c": 21,
+     "rain_mm": 0.0,
+     "bike": "poor",
+     "run": "care",
+     "open_water": "no"
+    },
+    "evening": {
+     "gust_max_kmh": 54,
+     "wind_mean_kmh": 16,
+     "dir": "SE",
+     "temp_c": 20,
+     "rain_mm": 0.0,
+     "bike": "care",
+     "run": "care",
+     "open_water": "no"
+    }
+   },
+   "calmest": "evening",
+   "location": "Cape Town",
+   "fetched": "2026-09-25 (live routine fetch)"
   }
  }
 }
