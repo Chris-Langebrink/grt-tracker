@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-30T21:31:54",
+ "generated_at": "2026-10-02T20:01:54",
  "window": {
   "start": "2026-08-10",
-  "end": "2026-09-30"
+  "end": "2026-10-02"
  },
  "activities": [
   {
@@ -3495,13 +3495,37 @@
   {
    "date": "2026-09-30",
    "rhr": 44,
-   "steps": 5568,
-   "stress": 25,
-   "bb_low": 34,
+   "steps": 6334,
+   "stress": 23,
+   "bb_low": 31,
    "bb_high": 100,
    "sleep_h": 7.8,
    "deep_min": 69,
    "hrv": 79,
+   "hrv_status": "BALANCED"
+  },
+  {
+   "date": "2026-10-01",
+   "rhr": 44,
+   "steps": 2776,
+   "stress": 18,
+   "bb_low": 40,
+   "bb_high": 100,
+   "sleep_h": 7.4,
+   "deep_min": 66,
+   "hrv": 65,
+   "hrv_status": "BALANCED"
+  },
+  {
+   "date": "2026-10-02",
+   "rhr": 42,
+   "steps": 2494,
+   "stress": 21,
+   "bb_low": 57,
+   "bb_high": 100,
+   "sleep_h": 7.0,
+   "deep_min": 88,
+   "hrv": 63,
    "hrv_status": "BALANCED"
   }
  ],
