@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07",
+ "generated_at": "2026-10-08",
  "location": "Cape Town",
  "source": "open-meteo.com",
  "units": "km/h, degrees C, mm",
@@ -10,55 +10,20 @@
  },
  "note": "Verdicts key off MAXIMUM GUST, not mean wind. Cape Town's south-easter routinely runs a 20 km/h mean with 80 km/h gusts, which is rideable on paper and not in practice.",
  "days": {
-  "2026-10-07": {
-   "windows": {
-    "early": {
-     "gust_max_kmh": 45,
-     "wind_mean_kmh": 10,
-     "dir": "SSE",
-     "temp_c": 13,
-     "rain_mm": 0.0,
-     "bike": "care",
-     "run": "good",
-     "open_water": "poor"
-    },
-    "midday": {
-     "gust_max_kmh": 40,
-     "wind_mean_kmh": 8,
-     "dir": "S",
-     "temp_c": 18,
-     "rain_mm": 0.0,
-     "bike": "good",
-     "run": "good",
-     "open_water": "poor"
-    },
-    "evening": {
-     "gust_max_kmh": 42,
-     "wind_mean_kmh": 13,
-     "dir": "S",
-     "temp_c": 16,
-     "rain_mm": 0.0,
-     "bike": "care",
-     "run": "good",
-     "open_water": "poor"
-    }
-   },
-   "calmest": "midday"
-  },
   "2026-10-08": {
    "windows": {
     "early": {
-     "gust_max_kmh": 25,
-     "wind_mean_kmh": 3,
-     "dir": "WSW",
+     "gust_max_kmh": 28,
+     "wind_mean_kmh": 4,
+     "dir": "W",
      "temp_c": 13,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "good"
+     "open_water": "care"
     },
     "midday": {
-     "gust_max_kmh": 44,
+     "gust_max_kmh": 41,
      "wind_mean_kmh": 12,
      "dir": "WNW",
      "temp_c": 17,
@@ -68,7 +33,7 @@
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 42,
+     "gust_max_kmh": 43,
      "wind_mean_kmh": 11,
      "dir": "NW",
      "temp_c": 16,
@@ -83,28 +48,28 @@
   "2026-10-09": {
    "windows": {
     "early": {
-     "gust_max_kmh": 39,
+     "gust_max_kmh": 37,
      "wind_mean_kmh": 10,
-     "dir": "SE",
-     "temp_c": 14,
+     "dir": "SSE",
+     "temp_c": 15,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
      "open_water": "poor"
     },
     "midday": {
-     "gust_max_kmh": 42,
+     "gust_max_kmh": 40,
      "wind_mean_kmh": 12,
      "dir": "NW",
-     "temp_c": 18,
+     "temp_c": 19,
      "rain_mm": 0.0,
-     "bike": "care",
+     "bike": "good",
      "run": "good",
      "open_water": "poor"
     },
     "evening": {
-     "gust_max_kmh": 32,
-     "wind_mean_kmh": 8,
+     "gust_max_kmh": 34,
+     "wind_mean_kmh": 9,
      "dir": "SW",
      "temp_c": 18,
      "rain_mm": 0.0,
@@ -118,32 +83,67 @@
   "2026-10-10": {
    "windows": {
     "early": {
-     "gust_max_kmh": 25,
+     "gust_max_kmh": 36,
      "wind_mean_kmh": 8,
      "dir": "SE",
-     "temp_c": 17,
+     "temp_c": 18,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
-     "open_water": "good"
+     "open_water": "poor"
     },
     "midday": {
-     "gust_max_kmh": 33,
-     "wind_mean_kmh": 8,
-     "dir": "SSE",
+     "gust_max_kmh": 41,
+     "wind_mean_kmh": 7,
+     "dir": "S",
      "temp_c": 26,
+     "rain_mm": 0.0,
+     "bike": "care",
+     "run": "good",
+     "open_water": "poor"
+    },
+    "evening": {
+     "gust_max_kmh": 45,
+     "wind_mean_kmh": 14,
+     "dir": "SSE",
+     "temp_c": 20,
+     "rain_mm": 0.0,
+     "bike": "care",
+     "run": "good",
+     "open_water": "poor"
+    }
+   },
+   "calmest": "early"
+  },
+  "2026-10-11": {
+   "windows": {
+    "early": {
+     "gust_max_kmh": 26,
+     "wind_mean_kmh": 6,
+     "dir": "S",
+     "temp_c": 17,
      "rain_mm": 0.0,
      "bike": "good",
      "run": "good",
      "open_water": "care"
     },
-    "evening": {
-     "gust_max_kmh": 45,
-     "wind_mean_kmh": 15,
-     "dir": "SSE",
-     "temp_c": 20,
+    "midday": {
+     "gust_max_kmh": 37,
+     "wind_mean_kmh": 10,
+     "dir": "S",
+     "temp_c": 25,
      "rain_mm": 0.0,
-     "bike": "care",
+     "bike": "good",
+     "run": "good",
+     "open_water": "poor"
+    },
+    "evening": {
+     "gust_max_kmh": 40,
+     "wind_mean_kmh": 11,
+     "dir": "SSE",
+     "temp_c": 21,
+     "rain_mm": 0.0,
+     "bike": "good",
      "run": "good",
      "open_water": "poor"
     }
