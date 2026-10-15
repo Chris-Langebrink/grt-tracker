@@ -1,10 +1,50 @@
 {
- "generated_at": "2026-10-13T19:43:26",
+ "generated_at": "2026-10-15T20:29:39",
  "window": {
   "start": "2026-08-10",
-  "end": "2026-10-13"
+  "end": "2026-10-15"
  },
  "activities": [
+  {
+   "id": "24717310750",
+   "start": "2026-10-14 07:19",
+   "date": "2026-10-14",
+   "type": "walking",
+   "discipline": "walk",
+   "name": "Cape Town Walking",
+   "km": 3.92,
+   "min": 45,
+   "sec": 2686,
+   "elev_m": 126,
+   "hr_avg_raw": 88.0,
+   "kcal": 252,
+   "hr_trace": [
+    77,
+    92,
+    98,
+    92,
+    88,
+    90,
+    97,
+    94,
+    89,
+    92,
+    91,
+    89,
+    85,
+    82,
+    90,
+    87,
+    88,
+    86,
+    82,
+    81,
+    84,
+    85,
+    82
+   ],
+   "hr_avg": 88
+  },
   {
    "id": "24711343842",
    "start": "2026-10-13 17:17",
@@ -4289,14 +4329,36 @@
   {
    "date": "2026-10-13",
    "rhr": 43,
-   "steps": 9386,
-   "stress": 22,
-   "bb_low": 39,
+   "steps": 10071,
+   "stress": 21,
+   "bb_low": 33,
    "bb_high": 100,
    "sleep_h": 8.1,
    "deep_min": 64,
    "hrv": 70,
    "hrv_status": "UNBALANCED"
+  },
+  {
+   "date": "2026-10-14",
+   "rhr": 46,
+   "steps": 7948,
+   "stress": 26,
+   "bb_low": 40,
+   "bb_high": 88,
+   "sleep_h": 7.1,
+   "deep_min": 61,
+   "hrv": 51,
+   "hrv_status": "UNBALANCED"
+  },
+  {
+   "date": "2026-10-15",
+   "rhr": null,
+   "steps": null,
+   "stress": null,
+   "bb_low": null,
+   "bb_high": null,
+   "hrv": null,
+   "hrv_status": null
   }
  ],
  "caveat": "Recorded distance and duration are a floor, not a total - the watch starts late, auto-splits and runs flat. HR above 190 bpm is dropped as an optical artefact."
